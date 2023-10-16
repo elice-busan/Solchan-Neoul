@@ -6,14 +6,21 @@
     <title>My Express Website</title>
 </head>
 <body>
+    <script>window.onload = function() {
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET', './Nav/navbar.html', true);
+        xhr.onreadystatechange = function() {
+            if (this.readyState !== 4) return;
+            if (this.status !== 200) return;
+            document.getElementById('navbar-container').innerHTML = this.responseText;
+        };
+        xhr.send();
+    };
+    </script>
     <h1>Welcome to Our Website</h1>
     <h2>메인 페이지</h2>
-    <nav>
-        <a href="./board/tourList.html">List</a> |
-        <a href="./user/login.html">Login</a> |
-        <a href="./user/signup.html">Sign Up</a> |
-        <a href="./user/myPage.html">My Page</a>
-    </nav>
+    <div id="navbar-container"></div>
+
     <p></p>
     <main>
         <div>
