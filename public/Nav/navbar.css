@@ -5,6 +5,7 @@
     position: relative; /* user-menu의 절대 위치를 위해 relative로 설정 */
     padding: 10px 20px; /* 네비게이션 바 패딩 추가 */
     border-bottom: 1px solid #e0e0e0; /* 하단 경계선 추가 */
+    height: 70px;
 }
 
 .main-menu {
@@ -16,7 +17,6 @@
 
 .user-menu {
     position: absolute; /* 절대 위치 설정 */
-    top: 10px; /* 상단에서 10px 떨어지도록 설정 */
     right: 20px; /* 오른쪽에서 20px 떨어지도록 설정 */
     display: flex;
     align-items: center;
@@ -29,5 +29,34 @@
 }
 
 .navbar a:hover {
-    color: #007BFF; /* 호버 시 색상 변경 */
+    color: #fb8d8d; /* 호버 시 색상 변경 */
+}
+
+.navbar a:hover svg {
+    fill: #fb8d8d; 
+}
+
+.login{
+    border: 1px;
+    border-radius: 50px;
+    background-color: #fb8d8d;
+    width: 50px;
+    padding: 5px 5px 7px 13px;
+
+}
+
+.navbar a.login:hover {
+    color: #ffffff; 
+}
+
+.signUp {
+    border: 1px;
+    border-radius: 50px;
+    background-color: #fb8d8d;
+    width: 75px;
+    padding: 5px 5px 7px 15px;
+}
+
+.navbar a.signUp:hover {
+    color: #ffffff; 
 }
