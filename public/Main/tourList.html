@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>tourList</title>
+  </head>
+  <body>
+    <script>
+      window.onload = function () {
+        var xhr = new XMLHttpRequest();
+        xhr.open("GET", "../Nav/navbar.html", true);
+        xhr.onreadystatechange = function () {
+          if (this.readyState !== 4) return;
+          if (this.status !== 200) return;
+          document.getElementById("navbar-container").innerHTML =
+            this.responseText;
+        };
+        xhr.send();
+      };
+    </script>
+    <div id="navbar-container"></div>
+
+    tourList 페이지 입니다.
+  </body>
+</html>

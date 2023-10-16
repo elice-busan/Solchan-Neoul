@@ -1,0 +1,33 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative; /* user-menu의 절대 위치를 위해 relative로 설정 */
+    padding: 10px 20px; /* 네비게이션 바 패딩 추가 */
+    border-bottom: 1px solid #e0e0e0; /* 하단 경계선 추가 */
+}
+
+.main-menu {
+    flex: 1;
+    display: flex;
+    left: 20px; /* 메인 메뉴 항목들을 왼쪽으로 배치 */
+    align-items: center;
+}
+
+.user-menu {
+    position: absolute; /* 절대 위치 설정 */
+    top: 10px; /* 상단에서 10px 떨어지도록 설정 */
+    right: 20px; /* 오른쪽에서 20px 떨어지도록 설정 */
+    display: flex;
+    align-items: center;
+}
+
+.navbar a {
+    margin: 0 10px; /* 링크 간 간격 설정 */
+    text-decoration: none; /* 밑줄 제거 */
+    color: #333; /* 링크 색상 설정 */
+}
+
+.navbar a:hover {
+    color: #007BFF; /* 호버 시 색상 변경 */
+}

@@ -1,30 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>My Express Website</title>
-</head>
-<body>
-    <h1>Welcome to Our Website</h1>
-    <h2>메인 페이지</h2>
-    <nav>
-        <a href="./board/tourList.html">List</a> |
-        <a href="./user/login.html">Login</a> |
-        <a href="./user/signup.html">Sign Up</a> |
-        <a href="./user/myPage.html">My Page</a>
-    </nav>
+  </head>
+  <body>
+    <script>
+      window.onload = function () {
+        var xhr = new XMLHttpRequest();
+        xhr.open("GET", "./Nav/navbar.html", true);
+        xhr.onreadystatechange = function () {
+          if (this.readyState !== 4) return;
+          if (this.status !== 200) return;
+          document.getElementById("navbar-container").innerHTML =
+            this.responseText;
+        };
+        xhr.send();
+      };
+    </script>
+    <div id="navbar-container"></div>
+
     <p></p>
     <main>
-        <div>
-            관광지 1
-        </div>
-        <div>
-            관광지 2
-        </div>
-        <div>
-            관광지 3
-        </div>
+      <div>관광지 1</div>
+      <div>관광지 2</div>
+      <div>관광지 3</div>
     </main>
-</body>
+  </body>
 </html>
