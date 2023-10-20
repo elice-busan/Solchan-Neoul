@@ -40,8 +40,8 @@
     border: 1px;
     border-radius: 50px;
     background-color: #fb8d8d;
-    width: 50px;
-    padding: 5px 5px 7px 13px;
+    width: 45px;
+    padding: 5px 5px 7px 15px;
 
 }
 
@@ -53,8 +53,8 @@
     border: 1px;
     border-radius: 50px;
     background-color: #fb8d8d;
-    width: 75px;
-    padding: 5px 5px 7px 15px;
+    width: 60px;
+    padding: 5px 5px 7px 17px;
 }
 
 .navbar a.signUp:hover {

@@ -1,31 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Express Website</title>
+    <meta charset="UTF-8">
+    <meta name="Solchan-Neoul" content="Solchan-Neoul">
+    <meta name="description" content="This is Solchan-Neoul main website.">
+    <meta name="keywords" content="Solchan-Neoul">
+    <meta name="generator" content="Visual Code">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        Solchan-Neoul | Home
+    </title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Charm&family=Oswald:wght@500&display=swap" rel="stylesheet">
+    <link rel="icon" href="./favicon.png">
+    <link rel="stylesheet" href="./index.css">
+    <script src=""></script>
   </head>
   <body>
-    <script>
-      window.onload = function () {
-        var xhr = new XMLHttpRequest();
-        xhr.open("GET", "./Nav/navbar.html", true);
-        xhr.onreadystatechange = function () {
-          if (this.readyState !== 4) return;
-          if (this.status !== 200) return;
-          document.getElementById("navbar-container").innerHTML =
-            this.responseText;
-        };
-        xhr.send();
-      };
-    </script>
-    <div id="navbar-container"></div>
-
-    <p></p>
-    <main>
-      <div>관광지 1</div>
-      <div>관광지 2</div>
-      <div>관광지 3</div>
-    </main>
+  <div id="wrap">
+      <div id="banner">
+          <div class="banner-container">
+              <video muted autoplay loop>
+                  <source src="./busan_bg.mp4" type="video/mp4">
+              </video>
+              <div class="banner-text">
+                  <p class="p1">WELCOME TO</p>
+                  <P class="p1">SOLCHAN-NEOUL!</P>
+                  <P class="p2">ENJOY AND EXPERIENCE AT BUSAN 2030 EXPO!</P>
+              </div>
+              <div id="btn">
+                  <div id="btn-container">
+                      <div class="btn-text">
+                          <a href="./start.html">ENTER</a>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
   </body>
 </html>
