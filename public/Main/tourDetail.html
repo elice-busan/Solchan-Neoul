@@ -1,14 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>상세 페이지</title>
-  </head>
-  <body>
-    관광지 상세 페이지
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tour Detail</title>
+  <link rel="stylesheet" href="tourDetail.css">
+</head>
+<body>
+  <script>
+    window.onload = function () {
+      var xhr = new XMLHttpRequest();
+      xhr.open("GET", "../Nav/navbar.html", true);
+      xhr.onreadystatechange = function () {
+        if (this.readyState !== 4) return;
+        if (this.status !== 200) return;
+        document.getElementById("navbar-container").innerHTML =
+          this.responseText;
+      };
+      xhr.send();
+    };
+  </script>
+  <div id="navbar-container"></div>
+
+  <div class="detail-container">
+    <img src="static/image_1.jpg" alt="" style="width: 1500x; height: 400px; object-fit: cover;">
+    <h1 class="title">영화의 전당</h1>
+    
+  </div>
+  <div class="description">
+    <h2>주소</h2>
+    <p>부산 해운대구 수영강변대로 120 영화의 전당</p>
+    <h2>문의전화</h2>
+    <p>051-780-6000</p>
+    <h2>홈페이지</h2>
+    <p>http://www.dureraum.org/bcc/main/main.do?rbsIdx=1</p>
+    <p id="text"></p>
+    <h2>소개</h2>
+    <p>
+      영화의 전당(Busan Cinema Center)은 부산광역시 해운대구 센텀시티에 위치한 야외극장, 하늘연극장, 중극장, 소극장, 시네마테크 등 
+      각종 다양한 극장을 보유하고 있는 부산의 랜드마크이다. 영화인들의 열망과 아시아의 대표적인 영화 • 영상 도시를 지향하는 부산국제영화제 전용관으로 2011년에 개관하였으며, 
+      오스트리아 쿱힘멜브라우가 기본 설계한 건물이다. 
+      애칭으로 순우리말인 두레(함께 모여)와 라움(즐거움)을 조합한 함께 모여 영화를 즐기는 자리라는 의미인 두레라움(Dureraum)이라고도 불린다.
+    </p>
+    <h2>오시는길</h2>
     <div>
-      <a href="/tourList">목록으로</a>
+
     </div>
-  </body>
+
+  </div>
+  <script>
+    // JavaScript로 쿼리 매개변수에서 데이터 읽기
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    const title = urlParams.get("title");
+    const text = urlParams.get("text");
+    const image = urlParams.get("image");
+
+    // 가져온 데이터를 화면에 표시
+    const titleElement = document.getElementById("title");
+    const textElement = document.getElementById("text");
+    const imageElement = document.getElementById("image");
+
+    titleElement.textContent = title;
+    textElement.textContent = text;
+
+    imageElement.src = decodeURIComponent(image); // 이미지 URL 설정
+    imageElement.alt = title; // 이미지의 대체 텍스트 설정
+  </script>
+</body>
 </html>

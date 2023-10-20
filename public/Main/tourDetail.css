@@ -1,0 +1,32 @@
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+  }
+  
+  body {
+    width: 1500px;
+    height: 100%;
+    margin: 0 auto;
+  }
+  
+.detail-container{
+    display: flex;
+    flex-direction: column;
+    max-width: 1500px;
+    justify-content:center; /* 왼쪽 정렬로 수정 */
+    margin: 0 auto;
+}
+.title{
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    position:absolute;
+    left: 50%;
+    color: white;
+}
