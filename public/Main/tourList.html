@@ -1,135 +1,187 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>tourList</title>
-    <link rel="stylesheet" href="tourList.css" />
-  </head>
-  <body>
-    <script>
-      window.onload = function () {
-        // Navbar 로딩
-        fetch("../Nav/navbar.html")
-          .then((response) => response.text())
-          .then((data) => {
-            document.getElementById("navbar-container").innerHTML = data;
-          });
-
-        // tourData 로딩
-        fetch("/tourList")
-          .then((response) => response.json())
-          .then((data) => {
-            tourData = data;
-            displayPage(currentPage);
-            createPaginationButtons();
-          });
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>tourList</title>
+  <link rel="stylesheet" href="tourList.css">
+</head>
+<body>
+  <script>
+    window.onload = function () {
+      var xhr = new XMLHttpRequest();
+      xhr.open("GET", "../Nav/navbar.html", true);
+      xhr.onreadystatechange = function () {
+        if (this.readyState !== 4) return;
+        if (this.status !== 200) return;
+        document.getElementById("navbar-container").innerHTML =
+          this.responseText;
       };
-    </script>
-    <div id="navbar-container"></div>
-    <div class="title-container">Tourist attraction</div>
-    <div class="box-container" id="tourList"></div>
-    <!-- start -->
-    <div class="page-number">
-      <ul id="pagination"></ul>
-    </div>
-    <!-- end -->
-    <script>
-      // Sample data from the backend
-      let tourData = [];
+      xhr.send();
+    };
+  </script>
+  <div id="navbar-container"></div>
+  <div class="title-container">Tourist attraction</div>
+  <div class="box-container" id="tourList"></div>
+  <!-- start -->
+  <div class="page-number">
+    <ul id="pagination"></ul>
+  </div>
+  <!-- end -->
+  <script>
+    // Sample data from the backend
+    const tourData = [
+      {
+        title: 'Haeundae Beach',
+        text: 'Tourist attraction',
+        image: 'static/image_1.jpg',
+      },
+      {
+        title: 'Another Attraction',
+        text: 'Another description',
+        image: 'static/image_2.jpg',
+      },
+      {
+        title: 'Yet Another Attraction',
+        text: 'Another description',
+        image: 'static/image_3.jpg',
+      },
+      {
+        title: 'One More Attraction',
+        text: 'Another description',
+        image: 'static/image_4.jpg',
+      },
+      {
+        title: 'One More Attraction',
+        text: 'Another description',
+        image: 'static/image_4.jpg',
+      },
+      {
+        title: 'One More Attraction',
+        text: 'Another description',
+        image: 'static/image_4.jpg',
+      },
+      {
+        title: 'One More Attraction',
+        text: 'Another description',
+        image: 'static/image_4.jpg',
+      },
+      {
+        title: 'Yet Another Attraction',
+        text: 'Another description',
+        image: 'static/image_3.jpg',
+      },
+      {
+        title: 'One More Attraction',
+        text: 'Another description',
+        image: 'static/image_4.jpg',
+      },
+      {
+        title: 'One More Attraction',
+        text: 'Another description',
+        image: 'static/image_4.jpg',
+      },
+      {
+        title: 'One More Attraction',
+        text: 'Another description',
+        image: 'static/image_4.jpg',
+      },
+      
+    ];
 
-      const itemsPerPage = 12;
-      let currentPage = 1;
-      const totalPages = Math.ceil(tourData.length / itemsPerPage);
+    const itemsPerPage = 12;
+    let currentPage = 1;
+    const totalPages = Math.ceil(tourData.length / itemsPerPage);
 
-      const tourListContainer = document.getElementById("tourList");
-      const paginationContainer = document.getElementById("pagination");
+    const tourListContainer = document.getElementById('tourList');
+    const paginationContainer = document.getElementById('pagination');
 
-      function displayPage(pageNumber) {
-        const startIndex = (pageNumber - 1) * itemsPerPage;
-        const endIndex = startIndex + itemsPerPage;
-        const pageData = tourData.slice(startIndex, endIndex);
+    function displayPage(pageNumber) {
+      const startIndex = (pageNumber - 1) * itemsPerPage;
+      const endIndex = startIndex + itemsPerPage;
+      const pageData = tourData.slice(startIndex, endIndex);
 
-        tourListContainer.innerHTML = "";
+      tourListContainer.innerHTML = '';
 
-        pageData.forEach((tour) => {
-          const box = document.createElement("div");
-          box.className = "box";
+      pageData.forEach((tour) => {
+        const box = document.createElement('div');
+        box.className = 'box';
 
-          // 이미지를 클릭할 때 이벤트 리스너 추가
-          const imageContainer = document.createElement("div");
-          imageContainer.className = "image";
+        // 이미지를 클릭할 때 이벤트 리스너 추가
+        const imageContainer = document.createElement('div');
+        imageContainer.className = 'image';
 
-          const image = document.createElement("img");
-          image.src = tour.image;
-          image.alt = "image";
-          image.style.width = "100%";
-          image.style.height = "100%";
-          image.style.borderRadius = "20px";
+        const image = document.createElement('img');
+        image.src = tour.image;
+        image.alt = 'image';
+        image.style.width = '100%';
+        image.style.height = '100%';
+        image.style.borderRadius = '20px';
 
-          image.addEventListener("click", () => {
-            // 클릭한 이미지에 해당하는 데이터의 인덱스를 계산
-            const clickedIndex = startIndex + pageData.indexOf(tour);
+        image.addEventListener('click', () => {
+          // 클릭한 이미지에 해당하는 데이터의 인덱스를 계산
+          const clickedIndex = startIndex + pageData.indexOf(tour);
 
-            // 상세 페이지로 이동 (예: URL 변경)
-            window.location.href = `tourDetail.html?id=${clickedIndex}`;
+          // 상세 페이지로 이동 (예: URL 변경)
+          window.location.href = `tourDetail.html?id=${clickedIndex}`;
 
-            // const imageUrl = tour.image;
-            // window.location.href = `tourDetail.html?title=${encodeURIComponent(tour.title)}&text=${encodeURIComponent(tour.text)}&image=${encodeURIComponent(imageUrl)}`;
-          });
-          const nextIcon = document.createElement("img");
-          nextIcon.className = "next";
-          nextIcon.src = "static/nextIcon.png";
-          nextIcon.alt = "nextIcon";
+          // const imageUrl = tour.image;
+          // window.location.href = `tourDetail.html?title=${encodeURIComponent(tour.title)}&text=${encodeURIComponent(tour.text)}&image=${encodeURIComponent(imageUrl)}`;
+        });
+        const nextIcon = document.createElement('img');
+        nextIcon.className = 'next';
+        nextIcon.src = 'static/nextIcon.png';
+        nextIcon.alt = 'nextIcon';
 
-          const bookmarkIcon = document.createElement("img");
-          bookmarkIcon.className = "bookmark";
-          bookmarkIcon.src = "static/bookmark.png";
-          bookmarkIcon.alt = "bookmark";
+        const bookmarkIcon = document.createElement('img');
+        bookmarkIcon.className = 'bookmark';
+        bookmarkIcon.src = 'static/bookmark.png';
+        bookmarkIcon.alt = 'bookmark';
 
-          const title = document.createElement("div");
-          title.className = "title";
-          title.textContent = tour.title;
+        const title = document.createElement('div');
+        title.className = 'title';
+        title.textContent = tour.title;
 
-          const text = document.createElement("div");
-          text.className = "text";
-          text.textContent = tour.text;
+        const text = document.createElement('div');
+        text.className = 'text';
+        text.textContent = tour.text;
 
-          imageContainer.appendChild(image);
-          imageContainer.appendChild(nextIcon);
-          imageContainer.appendChild(bookmarkIcon);
+        imageContainer.appendChild(image);
+        imageContainer.appendChild(nextIcon);
+        imageContainer.appendChild(bookmarkIcon);
 
-          box.appendChild(imageContainer);
-          box.appendChild(title);
-          box.appendChild(text);
+        box.appendChild(imageContainer);
+        box.appendChild(title);
+        box.appendChild(text);
 
-          tourListContainer.appendChild(box);
+        tourListContainer.appendChild(box);
+      });
+    }
+
+    function createPaginationButtons() {
+      paginationContainer.innerHTML = '';
+
+      for (let i = 1; i <= totalPages; i++) {
+        const button = document.createElement('li');
+        const link = document.createElement('a');
+        link.href = '#';
+        link.textContent = i;
+        button.appendChild(link);
+        paginationContainer.appendChild(button);
+
+        // 페이지 버튼 클릭 이벤트
+        link.addEventListener('click', () => {
+          currentPage = i;
+          displayPage(currentPage);
         });
       }
+    }
 
-      function createPaginationButtons() {
-        paginationContainer.innerHTML = "";
+    // 페이지 로드 시 첫 페이지 표시
+    displayPage(currentPage);
+    // 페이지 버튼 생성
+    createPaginationButtons();
+  </script>
 
-        for (let i = 1; i <= totalPages; i++) {
-          const button = document.createElement("li");
-          const link = document.createElement("a");
-          link.href = "#";
-          link.textContent = i;
-          button.appendChild(link);
-          paginationContainer.appendChild(button);
-
-          // 페이지 버튼 클릭 이벤트
-          link.addEventListener("click", () => {
-            currentPage = i;
-            displayPage(currentPage);
-          });
-        }
-      }
-
-      // 페이지 로드 시 첫 페이지 표시
-      displayPage(currentPage);
-      // 페이지 버튼 생성
-      createPaginationButtons();
-    </script>
-  </body>
+</body>
 </html>
