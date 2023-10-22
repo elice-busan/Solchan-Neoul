@@ -1,0 +1,37 @@
+[
+    {
+        "title": "Haeundae Beach",
+        "text": "Tourist attraction",
+        "image": "static/image_1.jpg"
+    },
+    {
+        "title": "test Attraction",
+        "text": "test description",
+        "image": "static/image_2.jpg"
+    },
+    {
+        "title": "Yet Another Attraction",
+        "text": "Another description",
+        "image": "static/image_3.jpg"
+    },
+    {
+        "title": "One More Attraction",
+        "text": "Another description",
+        "image": "static/image_4.jpg"
+    },
+    {
+        "title": "One More Attraction",
+        "text": "Another description",
+        "image": "static/image_4.jpg"
+    },
+    {
+        "title": "One More Attraction",
+        "text": "Another description",
+        "image": "static/image_4.jpg"
+    },
+    {
+        "title": "One More Attraction",
+        "text": "Another description",
+        "image": "static/image_4.jpg"
+    }
+]
