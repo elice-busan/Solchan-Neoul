@@ -26,49 +26,13 @@ html
     margin: 0 auto;
     background-color: #ffffff;
 }
-input
-{
-    width:350px;
-    height:80px;
-    font-size:24px;
-}
-.login-form
+.myPage-form
 {
     left: 50%;
     width: 1620px;
     height: 600px;
     margin: 0 auto;
     background-color: #b8f1ff;
-}
-#btn-login
-{
-    position: relative;
-    border: none;
-    display: inline-block;
-    padding: 15px 30px;
-    border-radius: 15px;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
-    font-size: 24px;
-    text-decoration: none;
-    font-weight: 600;
-    transition: 0.25s;
-    background-color: #6aafe6;
-    color: #ffffff;
-}
-#btn-login:active
-{
-    transform: scale(1.5);
-}
-#btn-login:hover
-{
-    letter-spacing: 2px;
-    transform: scale(1.2);
-    cursor: pointer;
-}
-#a1
-{
-    color: #6aafe6;
-    text-decoration: none;
 }
 #footer
 {
