@@ -1,12 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>singup</title>
+    <meta charset="UTF-8">
+    <meta name="Solchan-Neoul" content="Solchan-Neoul">
+    <meta name="description" content="This is Solchan-Neoul main website.">
+    <meta name="keywords" content="Solchan-Neoul">
+    <meta name="generator" content="Visual Code">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solchan-Neoul | Login</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Charm&family=Oswald:wght@500&display=swap" rel="stylesheet">
+    <link rel="icon" href="./favicon.png">
+    <link rel="stylesheet" href="./signup.css">
+    <script src=""></script>
   </head>
   <body>
-    회원가입 페이지 입니다.
-    <a href="/index.html">Home</a>
+    <script>
+      window.onload = function () {
+        var xhr = new XMLHttpRequest();
+        xhr.open("GET", "../Nav/navbar.html", true);
+        xhr.onreadystatechange = function () {
+          if (this.readyState !== 4) return;
+          if (this.status !== 200) return;
+          document.getElementById("navbar-container").innerHTML =
+            this.responseText;
+        };
+        xhr.send();
+      };
+    </script>
+    <div id="navbar-container"></div>
+
+    <p></p>
+    <body>
+      <div id="wrap">
+        <div id="main">
+            <div class="main-container">
+              <br>
+              <div class="registration-form">
+                <br>
+                <input type="text" placeholder="ID" id="id"><br><br>
+                <input type="password" placeholder="Password" id="password"><br><br>
+                <button id="btn-registration">registration</button>
+              </div>
+            </div>
+        </div>
+        <div id="footer">
+            <div class="footer-container">
+              <a>Busan, Republic of Korea</a>
+              <br>
+              <a>ⓒ 2024 Busan-Expo2030-Association all rights reserved.</a>
+              <br>
+              <a>Representative: Busan-Expo2030</a>
+            </div>
+        </div>
+    </div>
   </body>
 </html>

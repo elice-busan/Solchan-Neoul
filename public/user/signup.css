@@ -32,7 +32,7 @@ input
     height:80px;
     font-size:24px;
 }
-.login-form
+.registration-form
 {
     left: 50%;
     width: 1620px;
@@ -40,7 +40,7 @@ input
     margin: 0 auto;
     background-color: #b8f1ff;
 }
-#btn-login
+#btn-registration
 {
     position: relative;
     border: none;
@@ -55,20 +55,15 @@ input
     background-color: #6aafe6;
     color: #ffffff;
 }
-#btn-login:active
+#btn-registration:active
 {
     transform: scale(1.5);
 }
-#btn-login:hover
+#btn-registration:hover
 {
     letter-spacing: 2px;
     transform: scale(1.2);
     cursor: pointer;
-}
-#a1
-{
-    color: #6aafe6;
-    text-decoration: none;
 }
 #footer
 {
