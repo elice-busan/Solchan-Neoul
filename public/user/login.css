@@ -31,8 +31,6 @@ input
     width:350px;
     height:80px;
     font-size:24px;
-    position:relative;
-    left:150px;
 }
 .login-form
 {
@@ -56,7 +54,6 @@ input
     transition: 0.25s;
     background-color: #6aafe6;
     color: #ffffff;
-    left:150px;
 }
 #btn-login:active
 {
