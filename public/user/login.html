@@ -18,15 +18,12 @@
   <body>
     <script>
       window.onload = function () {
-        var xhr = new XMLHttpRequest();
-        xhr.open("GET", "../Nav/navbar.html", true);
-        xhr.onreadystatechange = function () {
-          if (this.readyState !== 4) return;
-          if (this.status !== 200) return;
-          document.getElementById("navbar-container").innerHTML =
-            this.responseText;
-        };
-        xhr.send();
+        // Navbar 로딩
+        fetch("../Nav/navbar.html")
+          .then((response) => response.text())
+          .then((data) => {
+            document.getElementById("navbar-container").innerHTML = data;
+          });
       };
     </script>
     <div id="navbar-container"></div>
