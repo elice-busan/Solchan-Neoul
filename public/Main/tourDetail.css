@@ -96,26 +96,25 @@ line-height: 40px;
 
 }
 .icons {
-width: 75%;
-display: flex;
-justify-content: space-between; /* 각 아이콘 사이의 공간을 최대로 설정 */
-flex-direction: row;
+  width: 75%; /* Set the width to 75% */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: left;
+  gap: 10px;
 }
 
 .icon {
-width: 33.33%;
-height: 70px;
-text-align: center;
-display: flex;
-flex-direction: row;
+  width: calc(33.33% - 10px); /* Adjust for margin between icons */
+  height: 70px;
+  text-align: left;
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 20px; /* Add margin between rows */
 }
-.icon img{
-margin-right: 5px;
-}
-.icons .icon div{
-display: flex;
-flex-direction: column;
-justify-content: center;
-margin: 0 auto;
 
+.icon img {
+  margin-right: 5px;
+}
+.icon p{
+  margin-bottom: 3px;
 }
