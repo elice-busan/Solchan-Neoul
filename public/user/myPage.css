@@ -13,11 +13,17 @@ html
     text-align: center;
     font-size: 30px; color: #ffffff;
 }
-
+#head
+{
+    height: 80px;
+    width: 100%;
+    background-color: #ffffff;
+}
 #main
 {
     height: 920px;
     background-color: #ffffff;
+    margin-bottom: 40px;
 }
 .main-container
 {
