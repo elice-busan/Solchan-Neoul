@@ -1,40 +1,73 @@
 [
     {
-        "title": "Haeundae Beach",
-        "text": "Tourist attraction",
+        "title": "광안리 바다의 낭만 민락수변공원",
+        "text": "광안리 밤바다 핫플레이스",
         "image": "static/image_1.jpg",
-        "id":"1"
+        "id":"0"
     },
     {
         "title": "test Attraction",
         "text": "test description",
         "image": "static/image_2.jpg",
-        "id":"2"
+        "id":"1"
     },
     {
         "title": "Yet Another Attraction",
         "text": "Another description",
         "image": "static/image_3.jpg",
+        "id":"2"
+    },
+    {
+        "title": "One More Attraction",
+        "text": "Another description",
+        "image": "static/image_4.jpg",
         "id":"3"
     },
     {
         "title": "One More Attraction",
         "text": "Another description",
-        "image": "static/image_4.jpg"
+        "image": "static/image_4.jpg",
+        "id":"4"
     },
     {
         "title": "One More Attraction",
         "text": "Another description",
-        "image": "static/image_4.jpg"
+        "image": "static/image_4.jpg",
+        "id":"5"
     },
     {
         "title": "One More Attraction",
         "text": "Another description",
-        "image": "static/image_4.jpg"
-    },
-    {
-        "title": "One More Attraction",
-        "text": "Another description",
-        "image": "static/image_4.jpg"
+        "image": "static/image_4.jpg",
+        "id":"6"
     }
+    ,
+    {
+        "title": "One More Attraction",
+        "text": "Another description",
+        "image": "static/image_4.jpg",
+        "id":"7"
+    }
+    ,
+    {
+        "title": "One More Attraction",
+        "text": "Another description",
+        "image": "static/image_4.jpg",
+        "id":"8"
+    }
+    ,
+    {
+        "title": "One More Attraction",
+        "text": "Another description",
+        "image": "static/image_4.jpg",
+        "id":"9"
+    }
+    ,
+    {
+        "title": "One More Attraction",
+        "text": "Another description",
+        "image": "static/image_4.jpg",
+        "id":"10"
+    }
+    
 ]
