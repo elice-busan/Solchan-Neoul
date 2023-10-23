@@ -15,6 +15,14 @@
           .then((data) => {
             document.getElementById("navbar-container").innerHTML = data;
           });
+        // tourData 로딩
+        fetch("/tourList")
+          .then((response) => response.json())
+          .then((data) => {
+            tourData = data;
+            displayPage(currentPage);
+            createPaginationButtons();
+          });
       };
     </script>
     <div id="navbar-container"></div>
