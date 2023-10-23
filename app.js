@@ -1,19 +1,8 @@
 const express = require("express");
 const fs = require('fs');
+const connectDB = require("./db")
 const app = express();
 const PORT = 3000;
-
-/*
-const mongodbConnection = require("./config/mongodb-connection");
-
-let collection;
-app.listen(3000, async()=>{
-    console.log("Server started");
-    const MongoClient = await mongodbConnection();
-    collection = mongodbClient.db().collection("post");
-    console.log("MpngoDB connected");
-})
-*/
 
 app.use(express.static('public'));
 
@@ -37,3 +26,8 @@ app.get('/tourList', (req, res) => {
       res.json(posts);
   });
 });
+
+app.use("/user/signup", require("./routes/api/register"));
+
+// allow us to get the data in request.body
+app.use(express.json({ extended: false }));

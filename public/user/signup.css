@@ -39,6 +39,7 @@ input
     height: 600px;
     margin: 0 auto;
     background-color: #b8f1ff;
+    border-radius: 30px;
 }
 #btn-registration
 {
@@ -77,4 +78,5 @@ input
     height: inherit;
     margin: 0 auto;
     background-color: #2c2c2c;
+    border-radius: 30px;
 }
