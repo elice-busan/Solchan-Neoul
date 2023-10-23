@@ -9,15 +9,12 @@
   <body>
     <script>
       window.onload = function () {
-        var xhr = new XMLHttpRequest();
-        xhr.open("GET", "../Nav/navbar.html", true);
-        xhr.onreadystatechange = function () {
-          if (this.readyState !== 4) return;
-          if (this.status !== 200) return;
-          document.getElementById("navbar-container").innerHTML =
-            this.responseText;
-        };
-        xhr.send();
+        // Navbar 로딩
+        fetch("../Nav/navbar.html")
+          .then((response) => response.text())
+          .then((data) => {
+            document.getElementById("navbar-container").innerHTML = data;
+          });
       };
     </script>
     <div id="navbar-container"></div>
@@ -78,35 +75,35 @@
           <div class="icon">
             <img src="static/icon1.png" alt="icon1" />
             <div>
-              <p style="font-weight: bold;">Address</p>
+              <p style="font-weight: bold">Address</p>
               <p>361, Gwangan Beach-ro, Suyeong-gu, Busan</p>
             </div>
           </div>
           <div class="icon">
             <img src="static/icon2.png" alt="icon2" />
             <div>
-              <p style="font-weight: bold;">Phone number</p>
+              <p style="font-weight: bold">Phone number</p>
               <p>051-610-4742</p>
             </div>
           </div>
           <div class="icon">
             <img src="static/icon3.png" alt="icon3" />
             <div>
-              <p style="font-weight: bold;">Fare</p>
+              <p style="font-weight: bold">Fare</p>
               <p>Free</p>
             </div>
           </div>
           <div class="icon">
             <img src="static/icon4.png" alt="icon4" />
             <div>
-              <p style="font-weight: bold;">Holiday</p>
+              <p style="font-weight: bold">Holiday</p>
               <p>Open 365 days a year</p>
             </div>
           </div>
           <div class="icon">
             <img src="static/icon5.png" alt="icon5" />
             <div>
-              <p style="font-weight: bold;">Operating day and time</p>
+              <p style="font-weight: bold">Operating day and time</p>
               <p>at all times</p>
             </div>
           </div>
@@ -115,37 +112,44 @@
       <div class="description">
         <div class="desc_title">Map</div>
         <div class="desc_text">
-          <div id="map" style="width: 800px; height: 400px; border-radius: 20px;"></div>
-          <div style="flex-direction: row; display:flex;">
-            <p style="font-weight: bold;">대중 교통</p>
-            <p>도시철도 2호선 광안역 3번 출구 도보 20분<br>
-              버스 41, 83-1, 210 민락수변공원 하차</p>
+          <div
+            id="map"
+            style="width: 800px; height: 400px; border-radius: 20px"
+          ></div>
+          <div style="flex-direction: row; display: flex">
+            <p style="font-weight: bold">대중 교통</p>
+            <p>
+              도시철도 2호선 광안역 3번 출구 도보 20분<br />
+              버스 41, 83-1, 210 민락수변공원 하차
+            </p>
           </div>
-          <div style="flex-direction: row; display:flex;">
-            <p style="font-weight: bold;">주차</p>
+          <div style="flex-direction: row; display: flex">
+            <p style="font-weight: bold">주차</p>
             <p>인근공영주차장</p>
           </div>
-          <div style="flex-direction: row; display:flex;">
-            <p style="font-weight: bold;">비고</p>
-            <p>장애인 주차구역, 장애인 화장실, 점자블록, 산책로 휠체어 접근 가능</p>
+          <div style="flex-direction: row; display: flex">
+            <p style="font-weight: bold">비고</p>
+            <p>
+              장애인 주차구역, 장애인 화장실, 점자블록, 산책로 휠체어 접근 가능
+            </p>
           </div>
-          
-          
         </div>
       </div>
     </div>
-    <script type="text/javascript" src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=b4e52c2d28f872d77f951b1551b9c36b"></script>
+    <script
+      type="text/javascript"
+      src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=b4e52c2d28f872d77f951b1551b9c36b"
+    ></script>
 
-	<script type="text/javascript">
-	
-	var container = document.getElementById('map'); //지도를 담을 영역의 DOM 레퍼런스
-	var options = { //지도를 생성할 때 필요한 기본 옵션
-		center: new kakao.maps.LatLng(33.450701, 126.570667), //지도의 중심좌표.
-		level: 3 //지도의 레벨(확대, 축소 정도)
-	};
+    <script type="text/javascript">
+      var container = document.getElementById("map"); //지도를 담을 영역의 DOM 레퍼런스
+      var options = {
+        //지도를 생성할 때 필요한 기본 옵션
+        center: new kakao.maps.LatLng(33.450701, 126.570667), //지도의 중심좌표.
+        level: 3, //지도의 레벨(확대, 축소 정도)
+      };
 
-	var map = new kakao.maps.Map(container, options); //지도 생성 및 객체 리턴
-	
-	</script>
+      var map = new kakao.maps.Map(container, options); //지도 생성 및 객체 리턴
+    </script>
   </body>
 </html>
