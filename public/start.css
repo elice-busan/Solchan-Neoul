@@ -13,6 +13,12 @@ html
     text-align: center;
     font-size: 30px; color: #ffffff;
 }
+#head
+{
+    height: 90px;
+    width: 100%;
+    background-color: #ffffff;
+}
 #menu
 {
     left: 50%;
@@ -32,8 +38,8 @@ html
 #banner
 {
     height: 1080px;
-    margin-bottom: 40px;
     background-color: #ffffff;
+    z-index: 9;
 }
 .banner-container
 {
@@ -42,6 +48,15 @@ html
     margin: 0 auto;
     background-image: url("./image/busan_bg.jpg");
     border-radius: 10px 10px 30px 30px;
+    z-index: 10;
+}
+.about-nav
+{
+    background-color: #ffffff;
+    height: 20px;
+    width: 1920px;
+    margin-bottom: 80px;
+    z-index: 8;
 }
 .banner-text
 {
@@ -77,7 +92,7 @@ html
 #about
 {
     height: 980px;
-    margin-bottom: 60px;
+    margin-bottom: 100px;
     background-color: #ffffff;
 }
 .about-container
@@ -86,6 +101,14 @@ html
     height: inherit;
     margin: 0 auto;
     background-color: #ffffff;
+}
+.content-nav
+{
+    background-color: #ffffff;
+    height: 20px;
+    width: 100%;
+    margin-bottom: 80px;
+    z-index: 7;
 }
 .item1
 {
@@ -143,7 +166,7 @@ html
 #contents
 {
     height: 820px;
-    margin-bottom: 100px;
+    margin-bottom: 180px;
     background-color: #ffffff;
 }
 .container-container
@@ -157,7 +180,7 @@ html
 #event
 {
     height: 420px;
-    margin-bottom: 60px;
+    margin-bottom: 80px;
     background-color: #ffffff;
 }
 .event-container
@@ -170,7 +193,7 @@ html
 }
 #footer
 {
-    height: 180px;
+    height: 380px;
     line-height: 60px;
     background-color: #ffffff;
 }
@@ -182,7 +205,31 @@ html
     background-color: #2c2c2c;
     border-radius: 30px;
 }
-
+#margin-left
+{
+    width: 80px;
+    height: 380px;
+    background-color: #2c2c2c;
+    float: left;
+    border-radius: 30px;
+}
+#copyright
+{
+    width: 1580px;
+    height: 380px;
+    background-color: #2c2c2c;
+    float: left;
+    text-align: left;
+    font-size: 40px;
+}
+#footer-logo
+{
+    width: 180px;
+    height: 380px;
+    float: left;
+    background-image: url('./image/footer_logo.png');
+    background-repeat: no-repeat;
+}
 .img1
 {
     height: 700px;
@@ -267,27 +314,6 @@ html
     background-color: #2be0aa;
     border-radius: 30px;
 }
-.img13
-{
-    height: 700px;
-    width: 500px;
-    background-color: #404b43;
-    border-radius: 30px;
-}
-.img14
-{
-    height: 700px;
-    width: 500px;
-    background-color: #0b2d49;
-    border-radius: 30px;
-}
-.img15
-{
-    height: 700px;
-    width: 500px;
-    background-color: #ff0606;
-    border-radius: 30px;
-}
 .img1:hover
 {
     transform: scale(1.02);
@@ -333,18 +359,6 @@ html
     transform: scale(1.02);
 }
 .img12:hover
-{
-    transform: scale(1.02);
-}
-.img13:hover
-{
-    transform: scale(1.02);
-}
-.img14:hover
-{
-    transform: scale(1.02);
-}
-.img15:hover
 {
     transform: scale(1.02);
 }
