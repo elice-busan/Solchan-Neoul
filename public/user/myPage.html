@@ -25,6 +25,24 @@
           .then((data) => {
             document.getElementById("navbar-container").innerHTML = data;
           });
+
+        // 사용자 정보 가져오기
+        fetch('/getUserInfo')
+          .then((response) => response.json())
+          .then((data) => {
+            // 사용자 이름 동적으로 렌더링
+            const usernameElement = document.getElementById("username");
+            usernameElement.textContent = `${data.username}님 반갑습니다!`;
+        });
+
+        // 로컬 스토리지에서 로그인한 사용자 정보 가져오기
+        const loggedUser = localStorage.getItem('loggedUser');
+        if (loggedUser) {
+            const userInfoDiv = document.querySelector(".user-info");
+            const idLine = document.createElement("div");
+            idLine.textContent = `ID: ${loggedUser}`;
+            userInfoDiv.appendChild(idLine);
+        }
       };
     </script>
     <div id="navbar-container"></div>
@@ -46,7 +64,7 @@
                     <br>
                     Name:
                     <br>
-                    ID:
+                    ID: <span id="username"></span>
                     <br>
                     Scraped list:
                     <br>
