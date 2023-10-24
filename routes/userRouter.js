@@ -6,8 +6,6 @@ const path = require('path');
 
 router.post('/signup', async (req, res) => {
     const { username, password, display_name } = req.body;
-    console.log(username);
-    console.log(display_name);
     const usersPath = path.join(__dirname, '../users.json');
     
     let users;
@@ -20,18 +18,40 @@ router.post('/signup', async (req, res) => {
 
     const existingUser = users.find(user => user.username === username);
     if (existingUser) {
-        return res.status(400).json({ http_status: 400, msg: 'User already exists!' });
+        // 회원가입 실패
+        return res.status(400).json({ msg: 'User already exists! Please sign up again.' });
     }
 
     users.push({ username, password, display_name });
     await fs.writeFile(usersPath, JSON.stringify(users, null, 2));
 
+    // 회원가입에 성공
     res.json({ http_status: 201, msg: 'Signup successful!' });
 });
 
 
-router.post('/login', (req, res) => {
-    // 로그인 로직
+
+router.post('/login', async (req, res) => {
+    const { username, password } = req.body; // 클라이언트로부터 받은 ID와 비밀번호
+    const usersPath = path.join(__dirname, '../users.json');
+    
+    let users;
+    try {
+        const data = await fs.readFile(usersPath, 'utf8');
+        users = JSON.parse(data);
+    } catch (err) {
+        return res.status(500).json({ msg: 'Internal server error' });
+    }
+
+    const existingUser = users.find(user => user.username === username && user.password === password);
+    if (existingUser) {
+        // 로그인 성공
+        return res.json({ http_status: 200, msg: 'Login successful!' });
+    } else {
+        // 로그인 실패
+        return res.status(401).json({ http_status: 401, msg: 'Invalid username or password!' });
+    }
 });
+
 
 module.exports = router;

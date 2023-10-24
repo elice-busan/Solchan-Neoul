@@ -21,11 +21,50 @@
       window.onload = function () {
         // Navbar 로딩
         fetch("../Nav/navbar.html")
-          .then((response) => response.text())
-          .then((data) => {
-            document.getElementById("navbar-container").innerHTML = data;
-          });
+            .then((response) => response.text())
+            .then((data) => {
+                document.getElementById("navbar-container").innerHTML = data;
+         });
+
+        // 로그인 버튼 이벤트 리스너
+        document.getElementById("btn-login").addEventListener("click", function (e) {
+            e.preventDefault(); // 폼의 기본 제출을 방지
+
+            const userId = document.getElementById("id").value;
+            const userpw = document.getElementById("password").value;
+
+            // 서버에 로그인 요청
+            fetch('/login', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    username: userId,
+                    password: userpw,
+                }),
+            })
+            .then((res) => {
+              if(res.status === 401){
+                //로그인 실패
+                return res.json().then(json => {
+                  alert(msg);
+                  window.location.hreg = "/login.html";
+                })
+              }else{
+                return res.json();
+              }
+            })
+            .then((json) => {
+              if(json && json.http_status === 200){
+                alert(json.msg);
+                localStorage.setItem('loggedUser', userId); // 로그인한 아이디 저장
+                window.location.href = '/start.html'; // 로그인 성공시 홈페이지로 리다이렉션
+              }
+            });
+        });
       };
+
     </script>
     <div id="navbar-container"></div>
 
