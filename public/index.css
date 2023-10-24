@@ -14,7 +14,7 @@ html
 #wrap
 {
     text-align: center;
-    font-size: 30px; color: #ffffff;
+    font-size: 25px; color: #ffffff;
 }
 #menu
 {
@@ -30,7 +30,7 @@ html
 {
     color: #ffffff;
     text-decoration: none;
-    font-size: 30px;
+    font-size: 20px;
 }
 #banner
 {
@@ -79,24 +79,25 @@ video
 }
 #btn
 {
-    height: 50px;
+    height: 100px;
     background-color: rgb(255, 255, 255, 0);
 
 }
 .btn-container
 {
-    width: 200px;
+    width: 180px;
     height: inherit;
     background-color:#00BFFF;
     color: #fff;
     border:none; 
-    padding:15px;
+    padding:20px 15px;
     border-radius: 10px;
     margin-left: 5px;
 }
-#btn:hover
+#btn .btn-container:hover
 {
-    transform: scale(1.05);
+    background-color: #fff;
+    color: #00BFFF;
 }
 .a1
 {
