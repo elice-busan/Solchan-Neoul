@@ -1,9 +1,12 @@
 const express = require("express");
 const fs = require('fs');
 const connectDB = require("./db")
+const cookieParser = require('cookie-parser');
+
+const userRouter = require('./routes/userRouter');
+
 const app = express();
 const PORT = 3000;
-const registerRoutes = require('./routes/api/register');
 
 app.use(express.static('public'));
 // Body Parser 미들웨어 설정
@@ -50,4 +53,4 @@ app.get('/tourList', (req, res) => {
   });
 });
 
-app.use("/", registerRoutes);
+app.use("/", userRouter);
