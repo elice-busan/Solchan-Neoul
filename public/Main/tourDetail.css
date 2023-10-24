@@ -11,9 +11,16 @@ html {
 
 body {
   width: 100%;
-  height: 100%;
-  font-family: Noto Sans;
+  height: 100%;  
+  font-family: 'Noto Sans KR';
 }
+@font-face {
+  font-family: 'Noto Sans KR';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../assets/fonts/noto-sans/noto-sans-kr-v21-korean-regular.woff2') format('woff2')
+}
+
 #head{
     height: 100px;
     width: 1500px;
@@ -97,7 +104,7 @@ padding: 5px; /* 원하는 패딩 설정 */
 max-width: 75%; /* 가로 너비를 2/3로 제한 */
 color: #000; /* 텍스트 색상을 설정 */
 height: auto;
-font-weight: 500; 
+
 line-height: 40px; 
 
 }

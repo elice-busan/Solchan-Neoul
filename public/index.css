@@ -2,11 +2,14 @@
 {
     margin: 0;
     padding: 0;
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Noto Sans KR';
 }
 html
 {
     scroll-behavior: smooth;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
 }
 #wrap
 {
@@ -20,7 +23,7 @@ html
     position: fixed;
     margin: 0 auto;
     height: 80px;
-    width: 1920px;
+    width: 100vw;
     background-color: rgb(255, 255, 255, 0);
 }
 #menu a
@@ -31,63 +34,69 @@ html
 }
 #banner
 {
-    height: 1080px;
+    height: 100vh;
     margin-bottom: 60px;
     background-color: #ffffff;
     
 }
 .banner-container
 {
-    width: 1920px;
+    width: auto;
     height: inherit;
-    margin: 0 auto;
-    border-radius: 30px;
+    
+    border-radius: 20px;
 }
 .banner-text
 {
     position: absolute;
-    width: 100%;
+    width: auto;
     top: 340px;
-    right: 520px;
+    left: 200px;
+    text-align: le;
 }
 .banner-text .p1
 {
     font-size: 64px;
     color: #ffffff;
-    text-shadow: 6px 2px 2px gray;
+    line-height: 130%;
+    font-weight: bold;
+    text-align: left;
+    text-shadow: 2px 2px 2px rgb(80, 80, 80);
     
 }
 .banner-text .p2
 {
+    margin-top: 20px;
+    font-weight: bold;
     font-size: 32px;
     color: #ffffff;
-    text-shadow: 6px 2px 2px gray;
+    text-shadow: 2px 2px 2px rgb(80, 80, 80);
     
 }
 video
 {
     z-index: 1;
-    border-radius: 10px 10px 30px 30px;
 }
 #btn
 {
     height: 50px;
-    background-color: rgb(255, 255, 255, 0)
+    background-color: rgb(255, 255, 255, 0);
+
 }
 .btn-container
 {
     width: 200px;
     height: inherit;
-    margin: 0 auto;
     background-color:#00BFFF;
     color: #fff;
     border:none; 
-    border-radius:10px; 
     padding:15px;
+    border-radius: 10px;
+    margin-left: 5px;
 }
 #btn:hover
 {
-    transform: scale(1.1);
+    transform: scale(1.05);
 }
 .a1
 {

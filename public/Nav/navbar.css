@@ -2,7 +2,13 @@
 {
     margin: 0;
     padding: 0;
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Noto Sans KR';
+}
+@font-face {
+  font-family: 'Noto Sans KR';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../assets/fonts/noto-sans/noto-sans-kr-v21-korean-regular.woff2') format('woff2')
 }
 .navbar {
     display: flex;
