@@ -24,8 +24,44 @@
           .then((data) => {
             document.getElementById("navbar-container").innerHTML = data;
           });
-      };
-    </script>
+
+        // 버튼 이벤트 리스너 추가
+        document.getElementById("btn-registration").addEventListener("click", function(){
+          const username = document.getElementById("name").value;
+          const userId = document.getElementById("id").value;
+          const userpw = document.getElementById("password").value;
+
+          if (!username || !userId || !userpw) {
+            alert('아이디, 비밀번호, 닉네임을 모두 입력해주세요.');
+            return;
+          }
+          console.log(username, userId, userpw);
+
+          /*
+          // 서버에 데이터 전송
+          fetch('www.langbards.com/user/signup.html', {
+            method: 'POST',
+            headers: {
+            Origin: 'http://localhost:3000/',
+            'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+            username: userId, // 여기서 userId를 username으로 사용하였습니다.
+            password: userpw,
+            display_name: username,
+            }),
+          })
+          .then((res) => res.json())
+          .then((json) => {
+            alert(json.msg);
+            if (json.http_status == 201) {
+             window.location.href = '/login';
+            }
+          });
+          */
+        });  
+  }; 
+   </script>
     <div id="navbar-container"></div>
 
     <p></p>
@@ -39,10 +75,12 @@
               <div class="registration-pic"></div>
               <div class="registration-form">
                 <br>
-                <input type="text" placeholder="name" id="name"><br><br>
-                <input type="text" placeholder="ID" id="id"><br><br>
-                <input type="password" placeholder="Password" id="password"><br><br>
-                <button id="btn-registration">registration</button>
+                <form method="POST" action="/signup">
+                  <input type="text" placeholder="name" id="name"><br><br>
+                  <input type="text" placeholder="ID" id="id"><br><br>
+                  <input type="password" placeholder="Password" id="password"><br><br>
+                  <button id="btn-registration">registration</button>
+                </form>
               </div>
               <div class="main-right"></div>
             </div>
