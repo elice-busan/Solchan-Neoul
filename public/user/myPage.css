@@ -13,11 +13,17 @@ html
     text-align: center;
     font-size: 30px; color: #ffffff;
 }
-
+#head
+{
+    height: 80px;
+    width: 100%;
+    background-color: #ffffff;
+}
 #main
 {
-    height: 820px;
+    height: 920px;
     background-color: #ffffff;
+    margin-bottom: 40px;
 }
 .main-container
 {
@@ -26,20 +32,32 @@ html
     margin: 0 auto;
     background-color: #ffffff;
 }
+.user-info
+{
+    width: 1420px;
+    height: 500px;
+    margin: 0 auto;
+    background-color: #82bdd4;
+    border-radius: 30px;
+}
+pre
+{
+    text-align: left;
+}
 .myPage-form
 {
     left: 50%;
-    width: 1620px;
-    height: 600px;
+    width: 1920px;
+    height: 750px;
     margin: 0 auto;
     background-color: #b8f1ff;
     border-radius: 30px;
 }
 #footer
 {
-    height: 180px;
+    height: 380px;
     line-height: 60px;
-    background-color: #ffffff;
+    background-color: #ffffffa6;
 }
 .footer-container
 {
@@ -48,4 +66,29 @@ html
     margin: 0 auto;
     background-color: #2c2c2c;
     border-radius: 30px;
+}
+#margin-left
+{
+    width: 80px;
+    height: 380px;
+    background-color: #2c2c2c;
+    float: left;
+    border-radius: 30px;
+}
+#copyright
+{
+    width: 1580px;
+    height: 380px;
+    background-color: #2c2c2c;
+    float: left;
+    text-align: left;
+    font-size: 40px;
+}
+#footer-logo
+{
+    width: 180px;
+    height: 380px;
+    float: left;
+    background-image: url('../image/footer_logo.png');
+    background-repeat: no-repeat;
 }

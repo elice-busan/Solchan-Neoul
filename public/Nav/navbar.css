@@ -1,11 +1,20 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    font-family: 'Oswald', sans-serif;
+}
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: relative; /* user-menu의 절대 위치를 위해 relative로 설정 */
+    position: fixed; /* user-menu의 절대 위치를 위해 relative로 설정 */
     padding: 10px 20px; /* 네비게이션 바 패딩 추가 */
     border-bottom: 1px solid #e0e0e0; /* 하단 경계선 추가 */
     height: 70px;
+    width: 100%;
+    background-color: #ffffff;
+    z-index: 27;
 }
 
 .main-menu {
@@ -13,33 +22,36 @@
     display: flex;
     left: 20px; /* 메인 메뉴 항목들을 왼쪽으로 배치 */
     align-items: center;
+    z-index: 28;
 }
 
 .user-menu {
     position: absolute; /* 절대 위치 설정 */
-    right: 20px; /* 오른쪽에서 20px 떨어지도록 설정 */
+    right: 60px; /* 오른쪽에서 20px 떨어지도록 설정 */
     display: flex;
     align-items: center;
+    z-index: 29;
 }
 
 .navbar a {
     margin: 0 10px; /* 링크 간 간격 설정 */
     text-decoration: none; /* 밑줄 제거 */
     color: #333; /* 링크 색상 설정 */
+    z-index: 30;
 }
 
 .navbar a:hover {
-    color: #fb8d8d; /* 호버 시 색상 변경 */
+    color: #00BFFF; /* 호버 시 색상 변경 */
 }
 
 .navbar a:hover svg {
-    fill: #fb8d8d; 
+    fill: #00BFFF; 
 }
 
 .login{
     border: 1px;
     border-radius: 50px;
-    background-color: #fb8d8d;
+    background-color: #00BFFF;
     width: 45px;
     padding: 5px 5px 7px 15px;
 
@@ -52,7 +64,7 @@
 .signUp {
     border: 1px;
     border-radius: 50px;
-    background-color: #fb8d8d;
+    background-color: #00BFFF;
     width: 60px;
     padding: 5px 5px 7px 17px;
 }

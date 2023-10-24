@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tour Detail</title>
     <link rel="stylesheet" href="tourDetail.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Charm&family=Oswald:wght@500&display=swap" rel="stylesheet">
   </head>
   <body>
     <script>
@@ -15,13 +18,30 @@
           .then((data) => {
             document.getElementById("navbar-container").innerHTML = data;
           });
-        // tourData 로딩
-        fetch("/tourList")
+
+        // URL에서 id 추출
+        const queryString = window.location.search;
+        const urlParams = new URLSearchParams(queryString);
+        const id = urlParams.get("id");
+
+        // 백엔드 API에서 데이터 가져오기
+        fetch(`/tourDetail/${id}`)// Update the URL to point to the correct API endpoint
+
           .then((response) => response.json())
           .then((data) => {
-            tourData = data;
-            displayPage(currentPage);
-            createPaginationButtons();
+            // 데이터를 페이지에 표시
+            document.getElementById("title").textContent = data.title;
+            document.getElementById("text").textContent = data.text;
+            document.getElementById("description").textContent = data.description;
+            document.getElementById("address").textContent = data.address;
+            document.getElementById("phone").textContent = data.phone;
+            document.getElementById("fare").textContent = data.fare;
+            document.getElementById("holiday").textContent = data.holiday;
+            document.getElementById("operating").textContent = data.operating;
+            document.getElementById("subway").textContent = data.subway;
+            document.getElementById("bus").textContent = data.bus;
+            document.getElementById("remark").textContent = data.remark;
+            document.querySelector(".imgSlide img").src = data.image;
           });
       };
     </script>
@@ -32,13 +52,13 @@
         <div class="circle"></div>
         <div class="circle"></div>
       </div>
-      <div class="subtitle">광안리 밤바다 핫플레이스</div>
-      <div class="title">광안리 바다의 낭만 민락수변공원</div>
+      <div class="subtitle" id="text"></div>
+      <div class="title" id="title"></div>
     </div>
     <div id="main">
       <div class="imgSlide">
         <img
-          src="static/image_1.jpg"
+          src="" 
           alt="image"
           width="100%"
           height="100%"
@@ -48,71 +68,45 @@
       </div>
       <div class="description">
         <div class="desc_title">Introduce</div>
-        <div class="desc_text">
-          바다에서 불어오는 바람을 가장 먼저 맞는 곳이며, <br />
-          마린시티와 광안대교의 야경을 가장 가까운 곳에서 만날 수 있는 곳
-          민락수변공원<br /><br />
-          여름에는 남녀노소가 모이는 휴식처로 사랑받고 있으며, 이 공원은 1997년
-          개장한 후 마린시티와 광안대교가 생기기 이전부터 부산 시민들의 휴식처로
-          사랑받아왔습니다. 푸른 하늘과 끝없는 바다가 한눈에 펼쳐지는 풍경은
-          주변 환경이 여러 번 변해도 그 자리를 굳건히 유지하고 있습니다.<br /><br />
-          푸른 바다의 탁트인 풍경은 보는 이들의 마음까지 시원하게 해주는
-          듯합니다. 낮에는 조용하게 혼자만의 바다를 즐길 수 있는 매력이 있고,
-          밤에는 활기와 낭만이 넘칩니다. 특히 여름밤에는 열대야를 날려버리려는
-          사람들로 북적입니다. 밤에는 파도에 비치는 마린시티와 광안대교의 불빛이
-          마치 밤하늘 위의 별처럼 반짝입니다. 민락수변공원은 매년 가을에 열리는
-          부산불꽃축제에서 밤하늘을 화려하게 수놓는 불꽃을 가까이에서 감상할 수
-          있는 장소로도 유명합니다.<br /><br />
-          민락수변공원 주변에는 편의시설과 먹거리 촌이 있습니다. 바다를 배경으로
-          커피를 즐길 수 있는 카페와 신선한 해산물을 맛볼 수 있는 포장마차촌
-          등이 있으며, 회타운이나 활어직판장에서 포장해온 회를 즐기는 사람들도
-          많이 볼 수 있습니다. 밤바다를 바라보며 노상에서 회를 즐기면 바다의
-          낭만과 함께 특별한 경험을 할 수 있습니다.<br /><br />
-          또한, 민락수변공원에서 광안리 백사장까지 이어지는 산책로를 걷는 것도
-          좋습니다. 여기서는 바다 바람을 맞으며 바다의 변화하는 풍경을 관찰하며
-          마음을 시원하게 정화할 수 있습니다. 공원에는 자전거 전용도로도
-          마련되어 있어, 자전거를 타는 사람들도 많이 볼 수 있습니다. 낮 시간에는
-          광안리 해변가의 삼익비치타운아파트 301동 앞에 위치한 자전거
-          무료대여소를 이용하는 것도 좋은 아이디어입니다. 여기에서는 신분증을
-          제시하면 자전거를 무료로 대여할 수 있습니다.
+        <div class="desc_text" id="description">
         </div>
       </div>
       <div class="description">
-        <div class="desc_title">부가정보</div>
+        <div class="desc_title">Additional<br>information</div>
         <div class="icons">
           <div class="icon">
             <img src="static/icon1.png" alt="icon1" />
             <div>
-              <p style="font-weight: bold">Address</p>
-              <p>361, Gwangan Beach-ro, Suyeong-gu, Busan</p>
+              <p style="font-weight: bold;">Address</p>
+              <p id="address"></p>
             </div>
           </div>
           <div class="icon">
             <img src="static/icon2.png" alt="icon2" />
             <div>
-              <p style="font-weight: bold">Phone number</p>
-              <p>051-610-4742</p>
+              <p style="font-weight: bold;">Phone number</p>
+              <p id="phone"></p>
             </div>
           </div>
           <div class="icon">
             <img src="static/icon3.png" alt="icon3" />
             <div>
-              <p style="font-weight: bold">Fare</p>
-              <p>Free</p>
+              <p style="font-weight: bold;">Fare</p>
+              <p id="fare"></p>
             </div>
           </div>
           <div class="icon">
             <img src="static/icon4.png" alt="icon4" />
             <div>
-              <p style="font-weight: bold">Holiday</p>
-              <p>Open 365 days a year</p>
+              <p style="font-weight: bold;">Holiday</p>
+              <p id="holiday"></p>
             </div>
           </div>
           <div class="icon">
             <img src="static/icon5.png" alt="icon5" />
             <div>
-              <p style="font-weight: bold">Operating day and time</p>
-              <p>at all times</p>
+              <p style="font-weight: bold;">Operating day and time</p>
+              <p id="operating"></p>
             </div>
           </div>
         </div>
@@ -120,35 +114,22 @@
       <div class="description">
         <div class="desc_title">Map</div>
         <div class="desc_text">
-          <div
-            id="map"
-            style="width: 800px; height: 400px; border-radius: 20px"
-          ></div>
-          <div style="flex-direction: row; display: flex">
-            <p style="font-weight: bold">대중 교통</p>
-            <p>
-              도시철도 2호선 광안역 3번 출구 도보 20분<br />
-              버스 41, 83-1, 210 민락수변공원 하차
-            </p>
+          <div id="map" style="width: 800px; height: 400px; border-radius: 20px;"></div>
+          <div style="flex-direction: column; display:flex;">
+            <p style="font-weight: bold; margin-right: 30px;">Public transport</p>
+            <p id="subway"></p>
+            <p id="bus"></p>
           </div>
-          <div style="flex-direction: row; display: flex">
-            <p style="font-weight: bold">주차</p>
-            <p>인근공영주차장</p>
+          <div style="flex-direction: column; display:flex;">
+            <p style="font-weight: bold; margin-right: 30px;">Other</p>
+            <p id="remark"></p>
           </div>
-          <div style="flex-direction: row; display: flex">
-            <p style="font-weight: bold">비고</p>
-            <p>
-              장애인 주차구역, 장애인 화장실, 점자블록, 산책로 휠체어 접근 가능
-            </p>
-          </div>
+          
+          
         </div>
       </div>
     </div>
-    <script
-      type="text/javascript"
-      src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=b4e52c2d28f872d77f951b1551b9c36b"
-    ></script>
-
+    <script type="text/javascript" src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=b4e52c2d28f872d77f951b1551b9c36b"></script>
     <script type="text/javascript">
       var container = document.getElementById("map"); //지도를 담을 영역의 DOM 레퍼런스
       var options = {
