@@ -10,18 +10,24 @@ html {
 }
 
 body {
-  width: 100vw;
-  height: 100vh;
-  font-family: 'NotoSans';
+  width: 100%;
+  height: 100%;
+  font-family: Noto Sans;
+}
+#head{
+    height: 100px;
+    width: 1500px;
+    background-color: #ffffff;
 }
 #top{
+  color: black;
+  text-align: center;
   margin: 0 auto;
-  max-width: 1500px;
-  margin-top: 30px;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+  margin-top: 20px;
 }
 .shape{
   display: flex;
