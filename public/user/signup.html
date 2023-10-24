@@ -38,29 +38,26 @@
           }
           console.log(username, userId, userpw);
 
-          /*
           // 서버에 데이터 전송
-          fetch('www.langbards.com/user/signup.html', {
+        fetch('/signup', {
             method: 'POST',
             headers: {
-            Origin: 'http://localhost:3000/',
-            'Content-Type': 'application/json',
+                'Content-Type': 'application/json',
             },
             body: JSON.stringify({
-            username: userId, // 여기서 userId를 username으로 사용하였습니다.
-            password: userpw,
-            display_name: username,
+                username: userId,
+                password: userpw,
+                display_name: username,
             }),
-          })
-          .then((res) => res.json())
-          .then((json) => {
+        })
+        .then((res) => res.json())
+        .then((json) => {
             alert(json.msg);
             if (json.http_status == 201) {
-             window.location.href = '/login';
+                window.location.href = '/login';
             }
-          });
-          */
-        });  
+        });
+      });  
   }; 
    </script>
     <div id="navbar-container"></div>

@@ -1,1 +1,7 @@
-[]
+[
+  {
+    "username": "test",
+    "password": "1234",
+    "display_name": "test"
+  }
+]
