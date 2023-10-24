@@ -4,9 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Solchan-Neoul | Tour List</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Charm&family=Oswald:wght@500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="tourList.css" />
     <link rel="stylesheet" href="../Footer/footer.css">
   </head>
@@ -51,7 +48,7 @@
 
       const tourListContainer = document.getElementById("tourList");
       const paginationContainer = document.getElementById("pagination");
-
+      let i=0;
       function displayPage(pageNumber) {
         const startIndex = (pageNumber - 1) * itemsPerPage;
         const endIndex = startIndex + itemsPerPage;
@@ -68,7 +65,7 @@
           imageContainer.className = "image";
 
           const image = document.createElement("img");
-          image.src = tour.image;
+          image.src = tour.images[i];
           image.alt = "image";
           image.style.width = "100%";
           image.style.height = "100%";
@@ -89,6 +86,11 @@
           nextIcon.className = "next";
           nextIcon.src = "static/nextIcon.png";
           nextIcon.alt = "nextIcon";
+
+          nextIcon.addEventListener("click", () => {
+            i = (i + 1) % tour.images.length;
+            image.src = tour.images[i];
+          });
 
           const bookmarkIcon = document.createElement("img");
           bookmarkIcon.className = "bookmark";
