@@ -44,6 +44,7 @@ app.get('/tourDetail/:id', (req, res) => {
 });
 
 app.get('/tourList', (req, res) => {
+  console.log("..");
   fs.readFile('posts.json', 'utf8', (err, data) => {
       if (err) {
           return res.status(500).send("Internal Server Error");

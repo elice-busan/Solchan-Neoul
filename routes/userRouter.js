@@ -4,10 +4,13 @@ const router = express.Router();
 const fs = require('fs').promises;
 const path = require('path');
 
+router.get('/')
+
 router.post('/signup', async (req, res) => {
+    console.log("확인")
     const { username, password, display_name } = req.body;
     const usersPath = path.join(__dirname, '../users.json');
-    
+    console.log(req.body);
     let users;
     try {
         const data = await fs.readFile(usersPath, 'utf8');
@@ -15,18 +18,18 @@ router.post('/signup', async (req, res) => {
     } catch (err) {
         users = [];
     }
-
+    console.log(users)
     const existingUser = users.find(user => user.username === username);
     if (existingUser) {
         // 회원가입 실패
-        return res.status(400).json({ msg: 'User already exists! Please sign up again.' });
+        return res.status(400).json({ success: false, msg: 'User already exists! Please sign up again.' });
     }
 
     users.push({ username, password, display_name });
     await fs.writeFile(usersPath, JSON.stringify(users, null, 2));
 
     // 회원가입에 성공
-    res.json({ http_status: 201, msg: 'Signup successful!' });
+    res.json({ http_status: 201, success: true, msg: 'Signup successful!' });
 });
 
 
