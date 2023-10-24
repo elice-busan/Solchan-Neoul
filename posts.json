@@ -2,7 +2,11 @@
     {
         "title": "Minrak Subyeon Park",
         "text": "Gwanganri night sea hot plate",
-        "image": "static/image_1.jpg",
+        "images": [
+            "static/image_1.jpg",
+            "static/image_2.jpg",
+            "static/image_3.jpg"
+        ],
         "description": "It is the first place to get wind from the sea and the closest place to meet the night view of Marine City and Gwangan Bridge. Minrak Waterfront Park is loved as a resting place for men and women of all ages in summer. Since its opening in 1997, this park has been loved as a resting place for Busan citizens even before Marine City and Gwangan Bridge were established. The scenery with blue skies and endless seas at a glance maintains its place even if the surrounding environment changes many times. The open view of the blue sea seems to cool the hearts of the viewers. During the day, you can enjoy the sea quietly and alone, and at night, it is full of vitality and romance. Especially on summer nights, it is crowded with people trying to blow away tropical nights. At night, the lights of Marine City and Gwangan Bridge shine like stars in the night sky. Minrak Waterfront Park is also famous as a place where you can enjoy fireworks that decorate the night sky up close at the Busan Fireworks Festival held every fall. There are convenient facilities and food villages around Minrak Waterfront Park. There are a cafe where you can enjoy coffee in the background of the sea and a cart bar where you can taste fresh seafood, and many people enjoy raw fish packed from raw fish towns and live fish markets. If you enjoy sashimi on the street while looking at the night sea, you can have a special experience with the romance of the sea. Also, it is good to walk on the trail that runs from Minrak Waterfront Park to Gwangalli white sand beach. Here, you can watch the changing scenery of the sea while enjoying the sea breeze and purify your mind. There is also a bicycle lane in the park, so many cyclists can see it. During the day, it is also a good idea to use the free bicycle rental station located in front of 301 Samik Beach Town Apartment on Gwangalli Beach. Here, you can rent a bicycle for free by presenting your ID.",
         "address" : "361, Gwangan Beach-ro, Suyeong-gu, Busan",
         "phone" : "051-610-4742",
@@ -17,7 +21,11 @@
     {
         "title": "test Attraction",
         "text": "test description",
-        "image": "static/image_2.jpg",
+        "images": [
+            "static/image_1.jpg",
+            "static/image_2.jpg",
+            "static/image_3.jpg"
+        ],
         "description":"",
         "address" : "",
         "phone" : "",
@@ -32,7 +40,11 @@
     {
         "title": "Yet Another Attraction",
         "text": "Another description",
-        "image": "static/image_3.jpg",
+        "images": [
+            "static/image_1.jpg",
+            "static/image_2.jpg",
+            "static/image_3.jpg"
+        ],
         "description":"",
         "address" : "",
         "phone" : "",
@@ -47,7 +59,11 @@
     {
         "title": "One More Attraction",
         "text": "Another description",
-        "image": "static/image_4.jpg",
+        "images": [
+            "static/image_1.jpg",
+            "static/image_2.jpg",
+            "static/image_3.jpg"
+        ],
         "description":"",
         "address" : "",
         "phone" : "",
@@ -62,7 +78,11 @@
     {
         "title": "One More Attraction",
         "text": "Another description",
-        "image": "static/image_4.jpg",
+        "images": [
+            "static/image_1.jpg",
+            "static/image_2.jpg",
+            "static/image_3.jpg"
+        ],
         "description":"",
         "address" : "",
         "phone" : "",
@@ -77,7 +97,11 @@
     {
         "title": "One More Attraction",
         "text": "Another description",
-        "image": "static/image_4.jpg",
+        "images": [
+            "static/image_1.jpg",
+            "static/image_2.jpg",
+            "static/image_3.jpg"
+        ],
         "description":"",
         "address" : "",
         "phone" : "",
@@ -92,7 +116,11 @@
     {
         "title": "One More Attraction",
         "text": "Another description",
-        "image": "static/image_4.jpg",
+        "images": [
+            "static/image_1.jpg",
+            "static/image_2.jpg",
+            "static/image_3.jpg"
+        ],
         "description":"",
         "address" : "",
         "phone" : "",
@@ -108,7 +136,11 @@
     {
         "title": "One More Attraction",
         "text": "Another description",
-        "image": "static/image_4.jpg",
+        "images": [
+            "static/image_1.jpg",
+            "static/image_2.jpg",
+            "static/image_3.jpg"
+        ],
         "description":"",
         "address" : "",
         "phone" : "",
@@ -124,7 +156,11 @@
     {
         "title": "One More Attraction",
         "text": "Another description",
-        "image": "static/image_4.jpg",
+        "images": [
+            "static/image_1.jpg",
+            "static/image_2.jpg",
+            "static/image_3.jpg"
+        ],
         "description":"",
         "address" : "",
         "phone" : "",
@@ -140,7 +176,11 @@
     {
         "title": "One More Attraction",
         "text": "Another description",
-        "image": "static/image_4.jpg",
+        "images": [
+            "static/image_1.jpg",
+            "static/image_2.jpg",
+            "static/image_3.jpg"
+        ],
         "description":"",
         "address" : "",
         "phone" : "",
@@ -156,7 +196,11 @@
     {
         "title": "One More Attraction",
         "text": "Another description",
-        "image": "static/image_4.jpg",
+        "images": [
+            "static/image_1.jpg",
+            "static/image_2.jpg",
+            "static/image_3.jpg"
+        ],
         "description":"",
         "address" : "",
         "phone" : "",
@@ -172,7 +216,11 @@
     {
         "title": "One More Attraction",
         "text": "Another description",
-        "image": "static/image_4.jpg",
+        "images": [
+            "static/image_1.jpg",
+            "static/image_2.jpg",
+            "static/image_3.jpg"
+        ],
         "description":"",
         "address" : "",
         "phone" : "",
@@ -188,7 +236,11 @@
     {
         "title": "One More Attraction",
         "text": "Another description",
-        "image": "static/image_4.jpg",
+        "images": [
+            "static/image_1.jpg",
+            "static/image_2.jpg",
+            "static/image_3.jpg"
+        ],
         "description":"",
         "address" : "",
         "phone" : "",

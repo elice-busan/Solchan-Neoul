@@ -5,9 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tour Detail</title>
     <link rel="stylesheet" href="tourDetail.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Charm&family=Oswald:wght@500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../Footer/footer.css">
   </head>
   <body>
@@ -19,15 +16,14 @@
           .then((data) => {
             document.getElementById("navbar-container").innerHTML = data;
           });
-
+    
         // URL에서 id 추출
         const queryString = window.location.search;
         const urlParams = new URLSearchParams(queryString);
         const id = urlParams.get("id");
-
+    
         // 백엔드 API에서 데이터 가져오기
-        fetch(`/tourDetail/${id}`)// Update the URL to point to the correct API endpoint
-
+        fetch(`/tourDetail/${id}`)
           .then((response) => response.json())
           .then((data) => {
             // 데이터를 페이지에 표시
@@ -42,10 +38,22 @@
             document.getElementById("subway").textContent = data.subway;
             document.getElementById("bus").textContent = data.bus;
             document.getElementById("remark").textContent = data.remark;
-            document.querySelector(".imgSlide img").src = data.image;
+            document.querySelector(".imgSlide img").src = data.images[0];
+            tourImageData = data.images;
           });
+    
+        const image = document.querySelector(".imgSlide img");
+        const nextIcon = document.querySelector(".nextIcon");
+        let tourImageData;
+        let i = 0;
+    
+        nextIcon.addEventListener("click", () => {
+          i = (i + 1) % tourImageData.length;
+          image.src = tourImageData[i];
+        });
       };
     </script>
+    
     <div id="navbar-container"></div>
     <div id="head"></div>
     <div id="top">
@@ -67,6 +75,9 @@
           style="object-fit: cover; border-radius: 20px"
         />
         <img src="static/nextIcon.png" alt="nextIcon" class="nextIcon" />
+        <script>
+          
+        </script>
       </div>
       <div class="description">
         <div class="desc_title">Introduce</div>

@@ -2,7 +2,7 @@
 {
     margin: 0;
     padding: 0;
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Noto Sans KR';
 }
 html
 {
@@ -59,6 +59,7 @@ html
     font-size: 64px;
     color: #ffffff;
     line-height: 130%;
+    font-weight: bold;
     text-align: left;
     text-shadow: 2px 2px 2px rgb(80, 80, 80);
     
@@ -66,6 +67,7 @@ html
 .banner-text .p2
 {
     margin-top: 20px;
+    font-weight: bold;
     font-size: 32px;
     color: #ffffff;
     text-shadow: 2px 2px 2px rgb(80, 80, 80);
@@ -90,10 +92,11 @@ video
     border:none; 
     padding:15px;
     border-radius: 10px;
+    margin-left: 5px;
 }
 #btn:hover
 {
-    transform: scale(1.1);
+    transform: scale(1.05);
 }
 .a1
 {
