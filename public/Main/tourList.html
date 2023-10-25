@@ -96,6 +96,13 @@
           bookmarkIcon.className = "bookmark";
           bookmarkIcon.src = "static/bookmark.png";
           bookmarkIcon.alt = "bookmark";
+          bookmarkIcon.addEventListener("click", () => {
+            if (bookmarkIcon.src.includes("bookmark.png")) {
+                bookmarkIcon.src = "static/bookmark_check.png";
+            } else {
+                bookmarkIcon.src = "static/bookmark.png";
+            }
+        });
 
           const title = document.createElement("div");
           title.className = "title";
