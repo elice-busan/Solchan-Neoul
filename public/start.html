@@ -15,121 +15,22 @@
     <link rel="stylesheet" href="./start.css">
     <script src="http://code.jquery.com/jquery-latest.min.js"></script>
     <link rel="stylesheet" href="../Footer/footer.css">
+    <!-- 이 예제에서는 필요한 js, css 를 링크걸어 사용 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/css/swiper.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/js/swiper.min.js"></script>
 </head>
 <body>
-<!-- 이 예제에서는 필요한 js, css 를 링크걸어 사용 -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/css/swiper.min.css">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/js/swiper.min.js"></script>
-    <script>
-      window.onload = function () {
-        // Navbar 로딩
-        fetch("../Nav/navbar.html")
-          .then((response) => response.text())
-          .then((data) => {
-            document.getElementById("navbar-container").innerHTML = data;
-          });
-      };
-      
-    </script>
-    <script>
-        new Swiper('.swiper-container', {
-    
-            slidesPerView : 3, // 동시에 보여줄 슬라이드 갯수
-            spaceBetween : 30, // 슬라이드간 간격
-            slidesPerGroup : 3, // 그룹으로 묶을 수, slidesPerView 와 같은 값을 지정하는게 좋음
-    
-            // 그룹수가 맞지 않을 경우 빈칸으로 메우기
-            // 3개가 나와야 되는데 1개만 있다면 2개는 빈칸으로 채워서 3개를 만듬
-            loopFillGroupWithBlank : true,
-    
-            loop : true, // 무한 반복
-    
-            pagination : { // 페이징
-                el : '.swiper-pagination',
-                clickable : true, // 페이징을 클릭하면 해당 영역으로 이동, 필요시 지정해 줘야 기능 작동
-            },
-            navigation : { // 네비게이션
-                nextEl : '.swiper-button-next', // 다음 버튼 클래스명
-                prevEl : '.swiper-button-prev', // 이번 버튼 클래스명
-            },
+  <script>
+    window.onload = function () {
+      // Navbar 로딩
+      fetch("../Nav/navbar.html")
+        .then((response) => response.text())
+        .then((data) => {
+          document.getElementById("navbar-container").innerHTML = data;
         });
-    </script>
-<style type="text/css">
-.swiper-container {
-	height:450px;
-	border:5px solid rgb(189, 189, 189);
-	box-shadow:0 0 20px #ffffff inset;
-  background-color: rgb(255, 255, 255);
-  border-radius: 10px;
-}
-.swiper-slide {
-	text-align:center;
-	display:flex; /* 내용을 중앙정렬 하기위해 flex 사용 */
-	align-items:center; /* 위아래 기준 중앙정렬 */
-	justify-content:center; /* 좌우 기준 중앙정렬 */
-}
-.swiper-slide img {
-	box-shadow:0 0 5px #555;
-	max-width:100%; /* 이미지 최대너비를 제한, 슬라이드에 이미지가 여러개가 보여질때 필요 */
-	/* 이 예제에서 필요해서 설정했습니다. 상황에따라 다를 수 있습니다. */
-}
-</style>
-<div id="navbar-container"></div>
-<div id="wrap">
-  <div id="head"></div>
-    <div id="banner">
-        <div class="banner-container">
-          <img src="./image/busan_bg.png" alt="">
-          <div class="banner-text">
-            <p class="p1">Korea's first World Expo</p>
-            <P class="p2">World Expro 2030 in Busan</P>
-            <P class="p3">Please cheer for us!</P>
-          </div>
-        </div>
-    </div>
-    <div id="about">
-        <div class="about-container">
-          <div class="about-nav"></div>
-          <div class="item1"></div>
-          <div class="item2"></div>
-          <div class="item3"></div>
-          <div class="item4"></div>
-        </div>
-    </div>
-    <div id="contents">
-      <div class="content-nav"></div>
-        <div class="container-container">
-          <div class="swiper-container">
-            <div class="swiper-wrapper">
-              <div class="swiper-slide"><a href="#"><div class="img1"></div></a></div>
-              <div class="swiper-slide"><a href="#"><div class="img2"></div></div>
-              <div class="swiper-slide"><a href="#"><div class="img3"></div></div>
-              <div class="swiper-slide"><a href="#"><div class="img4"></div></div>
-              <div class="swiper-slide"><a href="#"><div class="img5"></div></div>
-              <div class="swiper-slide"><a href="#"><div class="img6"></div></div>
-              <div class="swiper-slide"><a href="#"><div class="img7"></div></div>
-              <div class="swiper-slide"><a href="#"><div class="img8"></div></div>
-              <div class="swiper-slide"><a href="#"><div class="img9"></div></div>
-              <div class="swiper-slide"><a href="#"><div class="img10"></div></div>
-              <div class="swiper-slide"><a href="#"><div class="img11"></div></div>
-              <div class="swiper-slide"><a href="#"><div class="img12"></div></div>
-            </div>
-          
-            <!-- 네비게이션 -->
-            <div class="swiper-button-next"></div><!-- 다음 버튼 (오른쪽에 있는 버튼) -->
-            <div class="swiper-button-prev"></div><!-- 이전 버튼 -->
-          
-            <!-- 페이징 -->
-            <div class="swiper-pagination"></div>
-          </div>
-        </div>
-    </div>
-    </div>
-    <div id="event">
-        <div class="event-container">event</div>
-      </div>
-
-<script>
+    };
+  </script>
+  <script>
     new Swiper('.swiper-container', {
 
         slidesPerView : 3, // 동시에 보여줄 슬라이드 갯수
@@ -151,8 +52,119 @@
             prevEl : '.swiper-button-prev', // 이번 버튼 클래스명
         },
     });
-</script>
+  </script>
+  <style type="text/css">
+    .swiper-container {
+      height:450px;
+      border:5px solid rgb(189, 189, 189);
+      box-shadow:0 0 20px #ffffff inset;
+      background-color: rgb(255, 255, 255);
+      border-radius: 10px;
+    }
+    .swiper-slide {
+      text-align:center;
+      display:flex; /* 내용을 중앙정렬 하기위해 flex 사용 */
+      align-items:center; /* 위아래 기준 중앙정렬 */
+      justify-content:center; /* 좌우 기준 중앙정렬 */
+    }
+    .swiper-slide img {
+      box-shadow:0 0 5px #555;
+      max-width:100%; /* 이미지 최대너비를 제한, 슬라이드에 이미지가 여러개가 보여질때 필요 */
+      /* 이 예제에서 필요해서 설정했습니다. 상황에따라 다를 수 있습니다. */
+    }
+  </style>
+  <div id="navbar-container"></div>
+  <div id="wrap">
+    <div id="head"></div>
+    <div id="banner">
+      <div class="banner-container">
+        <div class="banner-text-zone">
+          <p class="p1">Korea's first World Expo</p>
+          <P class="p2">World Expro 2030 in Busan</P>
+          <P class="p3">Please cheer for us!</P>
+        </div>
+      </div>
+    </div>
+    <div id="about">
+      <div class="about-container">
+        <div class="about-nav"></div>
+        <div class="item1"></div>
+        <div class="item2"></div>
+        <div class="item3"></div>
+        <div class="item4"></div>
+      </div>
+    </div>
+    <div id="contents">
+      <div class="contents-nav"></div>
+      <div class="contents-container">
+        <div class="swiper-container">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide"><a href="#"><div class="img1"></div></a></div>
+            <div class="swiper-slide"><a href="#"><div class="img2"></div></a></div>
+            <div class="swiper-slide"><a href="#"><div class="img3"></div></a></div>
+            <div class="swiper-slide"><a href="#"><div class="img4"></div></a></div>
+            <div class="swiper-slide"><a href="#"><div class="img5"></div></a></div>
+            <div class="swiper-slide"><a href="#"><div class="img6"></div></a></div>
+            <div class="swiper-slide"><a href="#"><div class="img7"></div></a></div>
+            <div class="swiper-slide"><a href="#"><div class="img8"></div></a></div>
+            <div class="swiper-slide"><a href="#"><div class="img9"></div></a></div>
+            <div class="swiper-slide"><a href="#"><div class="img10"></div></a></div>
+            <div class="swiper-slide"><a href="#"><div class="img11"></div></a></div>
+            <div class="swiper-slide"><a href="#"><div class="img12"></div></a></div>
+          </div>
+          <!-- 네비게이션 -->
+          <div class="swiper-button-next"></div><!-- 다음 버튼 (오른쪽에 있는 버튼) -->
+          <div class="swiper-button-prev"></div><!-- 이전 버튼 -->
+          <!-- 페이징 -->
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+    </div>
+    <div id="event">
+      <div class="event-container">
+        <div class="event-zone">
+          <div class="slide">
+            <a href="#" class="alink">
+              <div class="alink-img1"></div>
+            </a>
+          </div>
+          <div class="slide">
+            <a href="#" class="alink">
+              <div class="alink-img2"></div>
+            </a>
+          </div>
+          <div class="slide">
+            <a href="#" class="alink">
+              <div class="alink-img3"></div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    new Swiper('.swiper-container', {
 
+        slidesPerView : 3, // 동시에 보여줄 슬라이드 갯수
+        spaceBetween : 30, // 슬라이드간 간격
+        slidesPerGroup : 3, // 그룹으로 묶을 수, slidesPerView 와 같은 값을 지정하는게 좋음
+
+        // 그룹수가 맞지 않을 경우 빈칸으로 메우기
+        // 3개가 나와야 되는데 1개만 있다면 2개는 빈칸으로 채워서 3개를 만듬
+        loopFillGroupWithBlank : true,
+
+        loop : true, // 무한 반복
+
+        pagination : { // 페이징
+            el : '.swiper-pagination',
+            clickable : true, // 페이징을 클릭하면 해당 영역으로 이동, 필요시 지정해 줘야 기능 작동
+        },
+        navigation : { // 네비게이션
+            nextEl : '.swiper-button-next', // 다음 버튼 클래스명
+            prevEl : '.swiper-button-prev', // 이번 버튼 클래스명
+        },
+    });
+  </script>
 <!-- 예제 종료 -->
 <script src="Footer/footer.js"></script>
 </body>

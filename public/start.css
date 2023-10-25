@@ -38,12 +38,13 @@ html
 #banner
 {
     background-color: #ffffff;
-    z-index: 9;
+    height: 1000px;
 }
 .banner-container
 {
     width: 1500px;
-    
+    height: 1000px;
+    background-image: url('./image/busan_bg.jpg');
     margin: 0 auto;
 }
 .banner-container img{
@@ -55,18 +56,19 @@ html
     /* background-color: #ffffff; */
     height: 40px;
     text-align: center;
-    z-index: 8;
     margin-top: 20px;
 }
-.banner-text
+.banner-text-zone
 {
+    margin-top: 540px;
     position: absolute;
-    top: 60%;
-    margin-left: 60px;
+    margin-left: 30px;
+    width: 800px;
+    height: 300px;
+    background-color: rgb(255, 255, 255, 0);
     font-weight: bold;
-    
 }
-.banner-text .p1
+.banner-text-zone .p1
 {
     text-align: left;
     font-size: 35px;
@@ -74,7 +76,7 @@ html
     text-shadow: 2px 2px 4px rgb(54, 54, 54);
     
 }
-.banner-text .p2
+.banner-text-zone .p2
 {
     text-align: left;
     font-size: 50px;
@@ -82,7 +84,7 @@ html
     text-shadow: 2px 2px 4px rgb(54, 54, 54);
     
 }
-.banner-text .p3
+.banner-text-zone .p3
 {
     text-align: left;
     font-size: 45px;
@@ -103,7 +105,7 @@ html
     margin: 0 auto;
     background-color: #ffffff;
 }
-.content-nav
+.contents-nav
 {
     background-color: #ffffff;
     height: 20px;
@@ -175,7 +177,7 @@ html
     background-color: #ffffff;
     margin: 0 auto;
 }
-.container-container
+.contents-container
 {
     width: 1200px;
     margin: 0 auto;
@@ -186,31 +188,116 @@ html
 #event
 {
     padding: 5px;
-    margin-top: 80pxx;
     margin-bottom: 20px;
-    background-color: #1a1a1a;
+    background-color: #ffffff;
 }
 .event-container
 {
     width: 1200px;
     height: 350px;
     margin: 0 auto;
-    background-color: #c3c52d;
+    background-color: #ffffff;
     border-radius: 5px;
+    border: 5px solid;
+    border-color: rgb(161, 161, 161);
+    border-radius: 10px;
 }
-
+.event-zone
+{
+    margin-left: 200px;
+    margin-top: 20px;
+    position: absolute;
+    width: 800px;
+    height: 300px;
+    background-color: #ffffff;
+    overflow: hidden;
+    border-radius: 10px;
+}
+.alink
+{
+    width: 800px;
+    height: 300px;
+    background-color: #26bb82;
+}
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+  
+    animation: slider 7.5s infinite linear;
+  }
+.alink-img1
+{
+    width: 800px;
+    height: 300px;
+    background-color: #ff0000;
+    border-radius: 10px;
+}
+.alink-img2
+{
+    width: 800px;
+    height: 300px;
+    background-color: #0011ff;
+    border-radius: 10px;
+}
+.alink-img3
+{
+    width: 800px;
+    height: 300px;
+    background-color: #00ff15;
+    border-radius: 10px;
+}
+  
+  .slide:nth-child(1) {
+    background-color: #788f88;
+    animation-delay: 0;
+  }
+  .slide:nth-child(2) {
+    background-color: #3891cc;
+    animation-delay: -2.5s;
+  }
+  .slide:nth-child(3) {
+    background-color: #944ad1;
+    animation-delay: -5s;
+  }
+  
+  @keyframes slider {
+    0% {
+      transform: translateX(0);
+    }
+  
+    26% {
+      transform: translateX(0);
+    }
+    33% {
+      transform: translateX(-100%);
+      animation-timing-function: step-end;
+    }
+    93% {
+      transform: translateX(100%);
+    }
+  
+    100% {
+      transform: translateX(0);
+    }
+  }
+  
 .img1
 {
     height: 350px;
     width: 250px;
-    background-color: #eba2a2;
+    background-color: #26bb82;
     border-radius: 20px;
 }
 .img2
 {
     height: 350px;
     width: 250px;
-    background-color: #545511;
+    background-color: #00ff15;
     border-radius: 20px;
 }
 .img3
