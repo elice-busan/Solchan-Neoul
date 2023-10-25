@@ -59,6 +59,7 @@
               }),
             })
               .then((res) => {
+                console.log("res : ");
                 console.log(res);
                 // 응답의 JSON 본문을 파싱하고 다음 then()에 전달
                 return res
@@ -66,11 +67,11 @@
                   .then((json) => ({ status: res.status, body: json }));
               })
               .then(({ status, body }) => {
-                if (status === 201) {
+                if (status === 200) {
                   // 회원가입 성공
                   alert(body.msg);
-                  localStorage.setItem("loggedUser", res.userId); // 로그인한 아이디 저장
-                  console.log(localStorage.getItem("loggedUser"));
+                  //localStorage.setItem("loggedUser", res.userId); // 로그인한 아이디 저장
+                  //console.log(localStorage.getItem("loggedUser"));
                   window.location.href = "/start.html";
                 } else if (status === 400) {
                   // 회원가입 실패

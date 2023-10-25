@@ -57,16 +57,16 @@
               console.log(res);
 
               // res.http_status 값 출력
-              console.log("HTTP Status:", res.http_status);
+              console.log("HTTP Status:", res.status);
 
-              if (res.http_status === 200) {
-                alert(json.msg);
+              if (res.status === 200) {
+                alert(body.msg);
                 setTimeout(() => {
                   localStorage.setItem("loggedUser", res.userId); // 로그인한 아이디 저장
                   console.log(localStorage.getItem("loggedUser"));
                   window.location.href = "/start.html"; // 로그인 성공시 홈페이지로 리다이렉션
                 }, 100); //100ms 지연 후 실행
-              } else if (res.http_status === 401) {
+              } else if (res.status === 401) {
                 //로그인 실패
                 return res.json().then((json) => {
                   alert(msg);
