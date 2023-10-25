@@ -34,7 +34,7 @@ router.post('/signup', async (req, res) => {
     await fs.writeFile(usersPath, JSON.stringify(users, null, 2));
 
     // 회원가입에 성공
-    res.json({ http_status: 201, success: true, msg: 'Signup successful!' });
+    res.json({ http_status: 201, success: true, msg: 'Signup successful!', userId: username });
 });
 
 
@@ -59,10 +59,10 @@ router.post('/login', async (req, res) => {
     const existingUser = users.some((user) => user.username === username && user.password === password);
     console.log("비교 결과 : ");
     console.log(existingUser);
-    
+
     if (existingUser) {
         // 로그인 성공
-        return res.json({ http_status: 200, msg: 'Login successful!' });
+        return res.json({ http_status: 200, msg: 'Login successful!', username: username });
     } else {
         // 로그인 실패
         return res.status(401).json({ http_status: 401, msg: 'Invalid username or password!' });

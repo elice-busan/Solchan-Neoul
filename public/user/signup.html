@@ -70,8 +70,11 @@
                 if (status === 200) {
                   // 회원가입 성공
                   alert(body.msg);
-                  //localStorage.setItem("loggedUser", res.userId); // 로그인한 아이디 저장
-                  //console.log(localStorage.getItem("loggedUser"));
+                  localStorage.setItem("loggedUser", body.username); // 로그인한 아이디 저장
+                  console.log(
+                    "Registered User: ",
+                    localStorage.getItem("loggedUser")
+                  );
                   window.location.href = "/start.html";
                 } else if (status === 400) {
                   // 회원가입 실패
