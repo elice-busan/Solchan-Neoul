@@ -1,21 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="Solchan-Neoul" content="Solchan-Neoul">
-    <meta name="description" content="This is Solchan-Neoul main website.">
-    <meta name="keywords" content="Solchan-Neoul">
-    <meta name="generator" content="Visual Code">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="Solchan-Neoul" content="Solchan-Neoul" />
+    <meta name="description" content="This is Solchan-Neoul main website." />
+    <meta name="keywords" content="Solchan-Neoul" />
+    <meta name="generator" content="Visual Code" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Solchan-Neoul | Login</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Charm&family=Oswald:wght@500&display=swap" rel="stylesheet">
-    <link rel="icon" href="./favicon.png">
-    <link rel="stylesheet" href="./signup.css">
-    <link rel="stylesheet" href="../Footer/footer.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Charm&family=Oswald:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="./favicon.png" />
+    <link rel="stylesheet" href="./signup.css" />
+    <link rel="stylesheet" href="../Footer/footer.css" />
     <script src=""></script>
   </head>
+
   <body>
     <script>
       window.onload = function () {
@@ -27,73 +31,92 @@
           });
 
         // 버튼 이벤트 리스너 추가
-        document.getElementById("btn-registration").addEventListener("click", function(){
-          const username = document.getElementById("name").value;
-          const userId = document.getElementById("id").value;
-          const userpw = document.getElementById("password").value;
+        document
+          .getElementById("btn-registration")
+          .addEventListener("click", function (e) {
+            e.preventDefault();
 
-          if (!username || !userId || !userpw) {
-            alert('아이디, 비밀번호, 닉네임을 모두 입력해주세요.');
-            return;
-          }
-          console.log(username, userId, userpw);
+            const username = document.getElementById("name").value;
+            const userpw = document.getElementById("password").value;
+            const display_name = document.getElementById("display_name").value;
 
-          // 서버에 데이터 전송
-        fetch('/signup', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-                username: userId,
+            if (!username || !userpw || !display_name) {
+              alert("아이디, 비밀번호, 닉네임을 모두 입력해주세요.");
+              return;
+            }
+            console.log(username, userpw, display_name);
+
+            // 서버에 데이터 전송
+            fetch("/signup", {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify({
+                username: username,
                 password: userpw,
-                display_name: username,
-            }),
-        })
-        .then((res) => {
-          // 응답의 JSON 본문을 파싱하고 다음 then()에 전달
-          return res.json().then(json => ({ status: res.status, body: json }));
-        })
-        .then(({ status, body }) => {
-          if (status === 400) {
-              // 회원가입 실패
-              alert(body.msg);
-              window.location.href = '/signup.html';
-          } else if (status === 201) {
-              // 회원가입 성공
-              alert(body.msg);
-              window.location.href = '/start.html';
-          } else {
-              // 예상치 못한 다른 상태 코드를 처리 (옵션)
-              console.error('Unexpected response:', body);
-          }
-        })
-      });  
-  }; 
-   </script>
+                display_name: display_name,
+              }),
+            })
+              .then((res) => {
+                console.log("res : ");
+                console.log(res);
+                // 응답의 JSON 본문을 파싱하고 다음 then()에 전달
+                return res
+                  .json()
+                  .then((json) => ({ status: res.status, body: json }));
+              })
+              .then(({ status, body }) => {
+                if (status === 200) {
+                  // 회원가입 성공
+                  alert(body.msg);
+                  //localStorage.setItem("loggedUser", res.userId); // 로그인한 아이디 저장
+                  //console.log(localStorage.getItem("loggedUser"));
+                  window.location.href = "/start.html";
+                } else if (status === 400) {
+                  // 회원가입 실패
+                  alert(body.msg);
+                  window.location.href = "/user/signup.html";
+                } else {
+                  // 예상치 못한 다른 상태 코드를 처리 (옵션)
+                  console.error("Unexpected response:", body);
+                }
+              });
+          });
+      };
+    </script>
     <div id="navbar-container"></div>
 
     <p></p>
-    <body>
-      <div id="wrap">
-        <div id="main">
-          <div id="head"></div>
-            <div class="main-container">
-              <br>
-              <div class="main-left"></div>
-              <div class="registration-pic"></div>
-              <div class="registration-form">
-                <br>
-                <form method="POST" action="/signup">
-                  <input type="text" placeholder="name" id="name"><br><br>
-                  <input type="text" placeholder="ID" id="id"><br><br>
-                  <input type="password" placeholder="Password" id="password"><br><br>
-                  <button id="btn-registration">registration</button>
-                </form>
-              </div>
-              <div class="main-right"></div>
-            </div>
+    <div id="wrap">
+      <div id="main">
+        <div id="head"></div>
+        <div class="main-container">
+          <br />
+          <div class="main-left"></div>
+          <div class="registration-pic"></div>
+          <div class="registration-form">
+            <br />
+            <form>
+              <input type="text" placeholder="ID" id="name" /><br /><br />
+              <input
+                type="password"
+                placeholder="Password"
+                id="password"
+              /><br /><br />
+              <input
+                type="text"
+                placeholder="display_name"
+                id="display_name"
+              /><br /><br />
+              <button id="btn-registration">registration</button>
+            </form>
+          </div>
+          <div class="main-right"></div>
         </div>
-        <script src="../Footer/footer.js"></script>
+      </div>
+
+      <script src="../Footer/footer.js"></script>
+    </div>
   </body>
 </html>
