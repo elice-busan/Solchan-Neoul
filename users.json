@@ -1,1 +1,27 @@
-[]
+[
+  {
+    "username": "aaa",
+    "password": "aaa",
+    "display_name": "aaa"
+  },
+  {
+    "username": "bbb",
+    "password": "bbb",
+    "display_name": "bbb"
+  },
+  {
+    "username": "eee",
+    "password": "eee",
+    "display_name": "eee"
+  },
+  {
+    "username": "test",
+    "password": "test",
+    "display_name": "test"
+  },
+  {
+    "username": "ccc",
+    "password": "ccc",
+    "display_name": "ccc"
+  }
+]

@@ -10,18 +10,22 @@
     <nav class="navbar">
       <div class="main-menu">
         <a href="/start.html">
-          <img src="../Main/static/logo.png" alt="로고" style="width: 200px;">
+          <img src="../Main/static/logo.png" alt="로고" style="width: 200px" />
         </a>
         <div class="category">
-        <a href="../start.html#about">ABOUT</a> |
-        <a href="../start.html#contents">COURSE</a> |
-        <a href="../Main/tourList.html">TOUR LIST</a>
-      </div>
+          <a href="../start.html#about">ABOUT</a> |
+          <a href="../start.html#contents">COURSE</a> |
+          <a href="../Main/tourList.html">TOUR LIST</a>
+        </div>
       </div>
       <div class="user-menu">
-        <a href="../user/login.html" class="user">Login</a>
-        <a href="../user/signup.html" class="user">Sign Up</a>
-        <a href="../user/myPage.html"
+        <a href="../user/login.html" class="user" id="loginBtn">Login</a>
+        <a href="../user/signup.html" class="user" id="signupBtn">Sign Up</a>
+        <a
+          href="../user/myPage.html"
+          class="user"
+          id="myPageBtn"
+          style="display: none"
           ><svg
             xmlns="http://www.w3.org/2000/svg"
             enable-background="new 0 0 24 24"
@@ -38,7 +42,26 @@
             </g>
           </svg>
         </a>
+        <a href="#" class="user" id="logoutBtn" style="display: none">Logout</a>
       </div>
     </nav>
+    <script>
+      window.onload = function () {
+        const loggedUser = localStorage.getItem("loggedUser");
+        if (loggedUser) {
+          // 로그인한 사용자가 있다면 로그인 및 회원가입 버튼을 숨기고 마이페이지 및 로그아웃 버튼을 표시
+          document.getElementById("loginBtn").style.display = "none";
+          document.getElementById("signupBtn").style.display = "none";
+          document.getElementById("myPageBtn").style.display = "block";
+          document.getElementById("logoutBtn").style.display = "block";
+        } else {
+          // 로그인한 사용자가 없다면 마이페이지 및 로그아웃 버튼을 숨기고 로그인 및 회원가입 버튼을 표시
+          document.getElementById("loginBtn").style.display = "block";
+          document.getElementById("signupBtn").style.display = "block";
+          document.getElementById("myPageBtn").style.display = "none";
+          document.getElementById("logoutBtn").style.display = "none";
+        }
+      };
+    </script>
   </body>
 </html>

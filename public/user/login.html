@@ -1,19 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="Solchan-Neoul" content="Solchan-Neoul">
-    <meta name="description" content="This is Solchan-Neoul main website.">
-    <meta name="keywords" content="Solchan-Neoul">
-    <meta name="generator" content="Visual Code">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="Solchan-Neoul" content="Solchan-Neoul" />
+    <meta name="description" content="This is Solchan-Neoul main website." />
+    <meta name="keywords" content="Solchan-Neoul" />
+    <meta name="generator" content="Visual Code" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Solchan-Neoul | Login</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Charm&family=Oswald:wght@500&display=swap" rel="stylesheet">
-    <link rel="icon" href="./favicon.png">
-    <link rel="stylesheet" href="./login.css">
-    <link rel="stylesheet" href="../Footer/footer.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Charm&family=Oswald:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="./favicon.png" />
+    <link rel="stylesheet" href="./login.css" />
+    <link rel="stylesheet" href="../Footer/footer.css" />
     <script src=""></script>
   </head>
   <body>
@@ -21,72 +24,87 @@
       window.onload = function () {
         // Navbar 로딩
         fetch("../Nav/navbar.html")
-            .then((response) => response.text())
-            .then((data) => {
-                document.getElementById("navbar-container").innerHTML = data;
-         });
+          .then((response) => response.text())
+          .then((data) => {
+            document.getElementById("navbar-container").innerHTML = data;
+          });
 
         // 로그인 버튼 이벤트 리스너
-        document.getElementById("btn-login").addEventListener("click", function (e) {
+        document
+          .getElementById("btn-login")
+          .addEventListener("click", function (e) {
             e.preventDefault(); // 폼의 기본 제출을 방지
 
             const userId = document.getElementById("id").value;
             const userpw = document.getElementById("password").value;
 
+            // 입력받은 값 출력
+            console.log("Input ID:", userId);
+            console.log("Input Password:", userpw);
+
             // 서버에 로그인 요청
-            fetch('/login', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({
-                    username: userId,
-                    password: userpw,
-                }),
-            })
-            .then((res) => {
-              if(res.status === 401){
-                //로그인 실패
-                return res.json().then(json => {
-                  alert(msg);
-                  window.location.hreg = "user/login.html";
-                })
-              }else{
-                return res.json();
-              }
-            })
-            .then((json) => {
-              if(json && json.http_status === 200){
+            fetch("/login", {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify({
+                username: userId,
+                password: userpw,
+              }),
+            }).then((res) => {
+              console.log("res: ");
+              console.log(res);
+
+              // res.http_status 값 출력
+              console.log("HTTP Status:", res.http_status);
+
+              if (res.http_status === 200) {
                 alert(json.msg);
-                localStorage.setItem('loggedUser', userId); // 로그인한 아이디 저장
-                window.location.href = '/start.html'; // 로그인 성공시 홈페이지로 리다이렉션
+                setTimeout(() => {
+                  localStorage.setItem("loggedUser", res.userId); // 로그인한 아이디 저장
+                  console.log(localStorage.getItem("loggedUser"));
+                  window.location.href = "/start.html"; // 로그인 성공시 홈페이지로 리다이렉션
+                }, 100); //100ms 지연 후 실행
+              } else if (res.http_status === 401) {
+                //로그인 실패
+                return res.json().then((json) => {
+                  alert(msg);
+                  setTimeout(() => {
+                    window.location.href = "user/login.html";
+                  }, 100);
+                });
               }
             });
-        });
+          });
       };
-
     </script>
     <div id="navbar-container"></div>
 
     <p></p>
-    <body>
-      <div id="wrap">
-        <div id="main">
-          <div id="head"></div>
-            <div class="main-container">
-              <br>
-              <div class="login-form">
-                <br>
-                <form method="POST" action="/login">
-                  <input type="text" placeholder="ID" id="id"><br><br>
-                  <input type="password" placeholder="Password" id="password"><br><br>
-                  <button id="btn-login">login</button>
-                </form>
-                <br><br>
-                Don't have an account yet? <a id="a1" href="./signup.html">Sign up</a>
-              </div>
-            </div>
+    <div id="wrap">
+      <div id="main">
+        <div id="head"></div>
+        <div class="main-container">
+          <br />
+          <div class="login-form">
+            <br />
+            <form>
+              <input type="text" placeholder="ID" id="id" /><br /><br />
+              <input
+                type="password"
+                placeholder="Password"
+                id="password"
+              /><br /><br />
+              <button id="btn-login">login</button>
+            </form>
+            <br /><br />
+            Don't have an account yet?
+            <a id="a1" href="./signup.html">Sign up</a>
+          </div>
         </div>
-        <script src="../Footer/footer.js"></script>
+      </div>
+      <script src="../Footer/footer.js"></script>
+    </div>
   </body>
 </html>
