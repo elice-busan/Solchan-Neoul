@@ -82,6 +82,7 @@ body {
 .next:hover {
   transform: translateY(-15%) scale(1.05);
   transition: transform 0.2s;
+  cursor: pointer;
 }
 
 .bookmark {
