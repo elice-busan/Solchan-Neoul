@@ -45,6 +45,8 @@
               userIdSpan.textContent = `ID: ${loggedUser}`;
               const displayNameSpan = document.querySelector("#displayName");
               displayNameSpan.textContent = `Name: ${displayName}`;
+
+              loadBookmarksForUser(loggedUser);
             } else {
               // User is not logged in, so hide myPage and logout buttons
               document.getElementById("myPageBtn").style.display = "none";
@@ -56,6 +58,57 @@
             }
           });
       };
+
+      function loadBookmarksForUser(username) {
+        fetch(`/getBookmarks/${username}`)
+          .then((response) => response.json())
+          .then((bookmarkedPostIds) => {
+            // 북마크된 포스트 데이터 가져오기
+            fetch("/tourList")
+              .then((response) => response.json())
+              .then((allTourData) => {
+                const bookmarkedTours = allTourData.filter((tour) =>
+                  bookmarkedPostIds.includes(tour.id)
+                );
+                displayBookmarkedTours(bookmarkedTours);
+              });
+          });
+      }
+
+      function displayBookmarkedTours(tours) {
+        const listContainer = document.querySelector(".list");
+        listContainer.innerHTML = ""; // 기존 항목 제거
+
+        tours.forEach((tour) => {
+          const box = document.createElement("div");
+          box.className = "box";
+
+          const imgDiv = document.createElement("div");
+          imgDiv.className = "img";
+          const image = document.createElement("img");
+          image.src = tour.image; // 포스트의 첫 번째 이미지 사용
+          imgDiv.appendChild(image);
+
+          const titleDiv = document.createElement("div");
+          titleDiv.id = "title";
+          titleDiv.textContent = tour.title;
+
+          const subtitleDiv = document.createElement("div");
+          subtitleDiv.id = "subtitle";
+          subtitleDiv.textContent = tour.text;
+
+          // 클릭 이벤트 리스너 추가
+          box.addEventListener("click", () => {
+            window.location.href = `/Main/tourDetail.html?id=${tour.id}`;
+          });
+
+          box.appendChild(imgDiv);
+          box.appendChild(titleDiv);
+          box.appendChild(subtitleDiv);
+
+          listContainer.appendChild(box);
+        });
+      }
     </script>
     <div id="navbar-container"></div>
     <script src="../Nav/navbar.js"></script>

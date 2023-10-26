@@ -42,24 +42,13 @@
           .then((response) => response.json())
           .then((data) => {
             tourData = data;
-
             const loggedUser = localStorage.getItem("loggedUser");
             if (loggedUser) {
-              return fetch(`/getBookmarks/${loggedUser}`)
+              fetch(`/getBookmarks/${loggedUser}`)
                 .then((res) => res.json())
                 .then((bookmarkedPosts) => {
-                  bookmarkedPosts.forEach((postId) => {
-                    const bookmarkIcon = document.querySelector(
-                      `[data-post-id="${postId}"]`
-                    );
-                    if (bookmarkIcon) {
-                      bookmarkIcon.src = "static/bookmark_check.png";
-                    }
-                  });
-                  displayPage(currentPage);
+                  displayPage(currentPage, bookmarkedPosts);
                   createPaginationButtons();
-
-                  loadBookmarksForUser(loggedUser);
                 });
             } else {
               displayPage(currentPage);
@@ -89,7 +78,8 @@
       const tourListContainer = document.getElementById("tourList");
       const paginationContainer = document.getElementById("pagination");
       let i = 0;
-      function displayPage(pageNumber) {
+
+      function displayPage(pageNumber, bookmarkedPosts = []) {
         const startIndex = (pageNumber - 1) * itemsPerPage;
         const endIndex = startIndex + itemsPerPage;
         const pageData = tourData.slice(startIndex, endIndex);
@@ -134,14 +124,14 @@
 
           const bookmarkIcon = document.createElement("img");
           bookmarkIcon.className = "bookmark";
-          bookmarkIcon.src = "static/bookmark.png";
-          bookmarkIcon.alt = "bookmark";
-          bookmarkIcon.setAttribute("data-bookmarked", "false"); // 초기 상태를 설정합니다.
+          if (bookmarkedPosts.includes(tour.id)) {
+            bookmarkIcon.src = "static/bookmark_check.png";
+            bookmarkIcon.setAttribute("data-bookmarked", "true");
+          } else {
+            bookmarkIcon.src = "static/bookmark.png";
+            bookmarkIcon.setAttribute("data-bookmarked", "false");
+          }
           bookmarkIcon.setAttribute("data-post-id", tour.id);
-          console.log(
-            `Rendering bookmark icon for post ${tour.id}:`,
-            bookmarkIcon.src
-          );
 
           bookmarkIcon.addEventListener("click", () => {
             const loggedUser = localStorage.getItem("loggedUser");
