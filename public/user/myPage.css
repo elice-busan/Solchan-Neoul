@@ -55,6 +55,7 @@ html
     border: 1px solid #4e4e4e;
     border-radius: 5px;
   }
+  
   .bookmark-form .list{
     display: flex;
     flex-direction: row;
@@ -62,16 +63,24 @@ html
     align-items: center;
     justify-content: center;
     padding: 40px;
+    overflow-x: hidden;
+    width: 70%;
   }
-  
+
   .bookmark-form .list .box .img{
     width: 160px;
-    height: 350px;
+    height: 300px;
     border-radius: 10px;
     object-fit: cover;
-    background-color: aqua;
+    /*background-color: aqua;*/
   }
   .bookmark-form .list .box {
-    margin-right: 25px;
-    
+    margin-right: 25px; 
   }
+
+  .img img {
+    width: 150px;  
+    height: 300px; 
+    object-fit: cover; /* 이미지 비율 유지 */
+    border-radius: 20px; 
+}
