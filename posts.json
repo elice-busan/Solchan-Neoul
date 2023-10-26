@@ -141,7 +141,7 @@
         "images": [
             "tourListImage/부산타워1.jpeg",
             "tourListImage/부산타워2.jpeg",
-            "tourListImage/부산타워3.jpeg"
+            "tourListImage/부산타원3.jpeg"
         ],
         "description":"It was a tourist tower located in Yongdusan Park and a key facility that represented Busan, a port city in the 20th century, to the outside world[1]. Nowadays, the park and the tower have aged, and many other splendid landmarks such as Gwangan Bridge and downtown Haeundae have been built. Today, the scenery around Gwangalli and Haeundae is used more as an image representing Busan in the 21st century, and its presence is relatively low. It has decreased, and locals do not particularly boast about Busan Tower. It is one of the famous landmarks of the Busan region and was completed in 1973, two years before Namsan Seoul Tower (aka Namsan Tower). The height of the tower is 120m, and it actually looks a little higher because 120m starts from the top of a small mountain called Yongdusan Mountain. There is no steel tower above for transmission and relay. Compared to towers built later, it is relatively low in height and is a pure observation tower without its own convenience facilities. It is located in the exact center of Nampo-dong, a tourist commercial area, and Yongdusan Mountain, where the tower is built, is only a 49m hill. In reality, it feels like a tourist attraction erected in a place where you can just go for a walk. From July 1, 2017, the operating rights were taken over by CJ Foodville. However, CJ Foodville later canceled the contract due to losses, returned the operating rights, and went on hiatus from January 1, 2021. In February 2021, the Busan Tourism Organization selected BN[2] as the new operator of Busan Tower, which is scheduled to open in June 2021 after renewal. # However, after there was no news for a while, news finally came out in December 2021. # According to the article, the tower's nickname will be 'Diamond Tower' and Daesun Distillery's brand shop will be opened.",
         "address" : "37-55 Yongdusan-gil, Jung-gu, Busan",
@@ -167,7 +167,7 @@
         "address" : "Huinnyeoul-gil, Yeongdo-gu, Busan",
         "phone" : "051-419-4067",
         "fare" : "Free",
-        "holiday" :"",
+        "holiday" :"Open 365 days a year",
         "operating" :"Open all year round",
         "subway":"Exit 6 of Nampo Station on Busan Metro Line 1 → Transfer to Bus 7, 71, or 508 → Get off at Baekryunsa Temple in Yeongseon-dong",
         "bus":"Bus 7,71,508 get off at Baekryunsa Temple in Yeongseon-dong",
@@ -176,48 +176,48 @@
     }
     ,
     {
-        "title": "One More Attraction",
-        "text": "Another description",
+        "title": "Geumjeongsanseong Fortress",
+        "text": "The fortress, which contains the will to protect the country as well as the techniques of the ancient ancestors",
         "images": [
             "tourListImage/금정산 1.jpg",
             "tourListImage/금정산 2.jpg",
             "tourListImage/금정산 3.jpg"
         ],
-        "description":"",
-        "address" : "",
-        "phone" : "",
-        "fare" : "",
-        "holiday" :"",
-        "operating" :"",
-        "subway":"",
-        "bus":"",
-        "remark":"",
+        "description":"Geumjeongsanseong Fortress is a fortress built in the Three Kingdoms Period, designated as Historic Site No. 215. After the Imjin War and the Byeongjahoran War, the construction of the castle was completed from 1701 to 1703 (29th year of King Sukjong's reign) with the aim of strengthening national defense and protecting the sea. Construction was completed in 1707, and is 17 km long and 1.5 to 3 m high. With an area of about 8,213 km2, it is the largest mountain fortress in Korea. ",
+        "address" : "Haedong Yonggungsa Temple, 86, Yonggung-gil, Gijang-eup, Gijang-gun, Busan",
+        "phone" : "051-514-5501",
+        "fare" : "Free",
+        "holiday" :"Open 365 days a year",
+        "operating" :"Open all year round",
+        "subway":"Get off the subway at Hwamang Station on Busan Metro Line 2.",
+        "bus":"City buses use 15 and 59.",
+        "remark":"Geumjeongsan Mountain Makgeolli restaurant is famous.",
         "id":"9"
     }
     ,
     {
-        "title": "One More Attraction",
-        "text": "Another description",
+        "title": "Ilgwang Beach",
+        "text": "From trendy marine sports to old landscapes",
         "images": [
             "tourListImage/일광해수욕장 1.jpg",
-            "tourListImage/일광해수욕장 2.jpg",
-            "tourListImage/일광해수욕장 3.jpg"
+            "tourListImage/일광해수욕장 2.jpeg",
+            "tourListImage/일광해수욕장 3.jpeg"
         ],
-        "description":"",
-        "address" : "",
-        "phone" : "",
-        "fare" : "",
-        "holiday" :"",
-        "operating" :"",
-        "subway":"",
-        "bus":"",
-        "remark":"",
+        "description":"Ilgwang Beach, located in Ilgwang-eup, Gijang-gun, has a shallow water depth and spreads in a circle from Gangsongjeong to Hakri-gu, allowing you to see the beautiful beach at a glance. It is well equipped with accommodation and convenience facilities such as guest houses and camping that can function as a vacation spot. You can enjoy sea fishing on the coast, and there is a fishbowl in nearby Chilam, so there is a line of raw fish restaurants. Every year, the Mudae Village Madanggeuk Festival is held on the water stage for four days from August 1st.",
+        "address" : " Samseong-ri, Ilgwang-myeon, Gijang-gun, Busan",
+        "phone" : "051-709-5446",
+        "fare" : "Free",
+        "holiday" :"Open 365 days a year",
+        "operating" :"24 hours a day",
+        "subway":"Get off at Ilgwang Station on Busan's Donghae Line.",
+        "bus":"The city bus is 180 and the number 3 for Seosaeng is used.",
+        "remark":"The on-road public parking lot in front of Ilgwang Beach is operated free of charge only during the summer vacation season.",
         "id":"10"
     }
     ,
     {
-        "title": "One More Attraction",
-        "text": "Another description",
+        "title": "Museum of Busan",
+        "text": "a place containing the history of Busan",
         "images": [
             "tourListImage/부산박물관 1.jpg",
             "tourListImage/부산박물관 2.jpg",
@@ -226,35 +226,15 @@
             "tourListImage/부산박물관 5.jpg"
         ],
 
-        "description":"",
-        "address" : "",
-        "phone" : "",
-        "fare" : "",
-        "holiday" :"",
-        "operating" :"",
-        "subway":"",
-        "bus":"",
-        "remark":"",
-        "id":"10"
-    }
-    ,
-    {
-        "title": "One More Attraction",
-        "text": "Another description",
-        "images": [
-            "static/image_1.jpg",
-            "static/image_2.jpg",
-            "static/image_3.jpg"
-        ],
-        "description":"",
-        "address" : "",
-        "phone" : "",
-        "fare" : "",
-        "holiday" :"",
-        "operating" :"",
-        "subway":"",
-        "bus":"",
-        "remark":"",
-        "id":"10"
+        "description":"The Busan Museum, which opened in 1978, is a representative comprehensive museum in Busan. It is a history museum that covers the history and culture of Busan from prehistory to modern times. The Busan Museum has about 64,000 items, including relics excavated from the Busan area and various artifacts of historical value. It consists of Dongnae Hall, Busan Hall, Donation Room, Art Room, Special Exhibition Room, and Outdoor Park. Not only can you see the exhibits online, but you can also enjoy educational experiences that require new technologies such as virtual reality.",
+        "address" : "152, Yuenan-ro, Nam-gu, Busan",
+        "phone" : "051-610-7111",
+        "fare" : "Free",
+        "holiday" :"Regular holidays every Monday",
+        "operating" :"09:00 ~ 18:00",
+        "subway":"Get off at Daeyeon Station on Busan Metro Line 2",
+        "bus":"City buses use 51, 68, 101, 134, 138, and 1006.",
+        "remark":"If you want to view the old excavation of Confucianism, I recommend the Bokcheon Museum under the Busan Museum.",
+        "id":"11"
     }
 ]
