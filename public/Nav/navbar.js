@@ -3,5 +3,5 @@ function logout() {
     localStorage.removeItem("loggedUser");
   
     // Redirect to the login page or any other desired page
-    window.location.href = "/user/login.html";
+    window.location.href = "/start.html";
   }
