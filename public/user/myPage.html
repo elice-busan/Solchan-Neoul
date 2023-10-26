@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="./myPage.css">
     <link rel="stylesheet" href="../Footer/footer.css">
     <script src=""></script>
+    <script src="../Nav/navbar.js"></script>
   </head>
   <body>
     <script>
@@ -24,7 +25,30 @@
           .then((response) => response.text())
           .then((data) => {
             document.getElementById("navbar-container").innerHTML = data;
+            const loggedUser = localStorage.getItem("loggedUser");
+
+          // Check if the user is logged in
+          if (loggedUser) {
+            // User is logged in, so hide login and signup buttons
+            document.getElementById("loginBtn").style.display = "none";
+            document.getElementById("signupBtn").style.display = "none";
+            
+            // Show myPage and logout buttons
+            document.getElementById("myPageBtn").style.display = "block";
+            document.getElementById("logoutBtn").style.display = "block";
+          } else {
+            // User is not logged in, so hide myPage and logout buttons
+            document.getElementById("myPageBtn").style.display = "none";
+            document.getElementById("logoutBtn").style.display = "none";
+
+            // Show login and signup buttons
+            document.getElementById("loginBtn").style.display = "block";
+            document.getElementById("signupBtn").style.display = "block";
+          }
+          // Add click event listener to the "Logout" button
+          
           });
+          
 
         // 사용자 정보 가져오기
         fetch('/getUserInfo')

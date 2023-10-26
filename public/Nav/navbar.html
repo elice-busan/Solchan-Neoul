@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Navbar</title>
     <link rel="stylesheet" href="/Nav/navbar.css" />
+    <script src="navbar.js"></script>
   </head>
   <body>
     <nav class="navbar">
@@ -42,26 +43,9 @@
             </g>
           </svg>
         </a>
-        <a href="#" class="user" id="logoutBtn" style="display: none">Logout</a>
+        <button onclick="logout()" class="user" id="logoutBtn" style="display: none">Logout</button>
+
       </div>
     </nav>
-    <script>
-      window.onload = function () {
-        const loggedUser = localStorage.getItem("loggedUser");
-        if (loggedUser) {
-          // 로그인한 사용자가 있다면 로그인 및 회원가입 버튼을 숨기고 마이페이지 및 로그아웃 버튼을 표시
-          document.getElementById("loginBtn").style.display = "none";
-          document.getElementById("signupBtn").style.display = "none";
-          document.getElementById("myPageBtn").style.display = "block";
-          document.getElementById("logoutBtn").style.display = "block";
-        } else {
-          // 로그인한 사용자가 없다면 마이페이지 및 로그아웃 버튼을 숨기고 로그인 및 회원가입 버튼을 표시
-          document.getElementById("loginBtn").style.display = "block";
-          document.getElementById("signupBtn").style.display = "block";
-          document.getElementById("myPageBtn").style.display = "none";
-          document.getElementById("logoutBtn").style.display = "none";
-        }
-      };
-    </script>
   </body>
 </html>
