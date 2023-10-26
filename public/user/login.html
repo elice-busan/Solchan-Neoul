@@ -70,10 +70,10 @@
                 // 로그인 성공
                 if (status === 200) {
                   alert(body.msg);
-                  localStorage.setItem("loggedUser", body.username); // 로그인한 아이디 저장
-                  localStorage.setItem("displayName", body.display_name); // 로그인한 닉네임 저장
-                  const loggedUser = localStorage.getItem("loggedUser");
-                  const displayName = localStorage.getItem("displayName");
+                  sessionStorage.setItem("loggedUser", body.username); // 로그인한 아이디 저장
+                  sessionStorage.setItem("displayName", body.display_name); // 로그인한 닉네임 저장
+                  const loggedUser = sessionStorage.getItem("loggedUser");
+                  const displayName = sessionStorage.getItem("displayName");
                   console.log("Logged User:", loggedUser);
                   console.log("Display Name:", displayName);
 

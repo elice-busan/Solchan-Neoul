@@ -69,15 +69,15 @@
                 if (status === 200) {
                   // 회원가입 성공
                   alert(body.msg);
-                  localStorage.setItem("loggedUser", body.username); // 로그인한 아이디 저장
-                  localStorage.setItem("displayName", body.display_name);
+                  sessionStorage.setItem("loggedUser", body.username); // 로그인한 아이디 저장
+                  sessionStorage.setItem("displayName", body.display_name);
                   console.log(
                     "Registered User: ",
-                    localStorage.getItem("loggedUser")
+                    sessionStorage.getItem("loggedUser")
                   );
                   console.log(
                     "User nickname: ",
-                    localStorage.getItem("displayName")
+                    sessionStorage.getItem("displayName")
                   );
                   window.location.href = "/user/myPage.html";
                 } else if (status === 400) {
