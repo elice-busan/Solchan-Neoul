@@ -7,49 +7,71 @@
 html
 {
     scroll-behavior: smooth;
+    overflow-y: hidden;
 }
-#wrap
-{
-    text-align: center;
-    font-size: 30px; color: #ffffff;
-}
-#head
-{
-    height: 80px;
-    width: 100%;
+#wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 790px;
+  }
+  
+  .main-container {
+    width: 100%; /* 100%로 수정 */
+    height: auto; /* height을 auto로 변경 */
     background-color: #ffffff;
-}
-#main
-{
-    height: 920px;
-    background-color: #ffffff;
-    margin-bottom: 40px;
-}
-.main-container
-{
-    width: 1920px;
-    height: inherit;
-    margin: 0 auto;
-    background-color: #ffffff;
-}
-.user-info
-{
-    width: 1420px;
-    height: 500px;
-    margin: 0 auto;
-    background-color: #82bdd4;
-    border-radius: 30px;
-}
-pre
-{
+  }
+  
+  .user-info {
+    width: 20%;
+    height: 550px;
+    background-color: #fff;
+    border: 0.3px solid #4e4e4e;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .user-info .text{
     text-align: left;
-}
-.myPage-form
-{
-    left: 50%;
-    width: 1920px;
-    height: 750px;
+  }
+  .user-info .text p{
+    margin-top: 20px;
+  }
+  .bookmark-form{
+    width: 80%;
+    height: 550px;
+    background-color: #f3f3f3;
+  }
+  
+  .mypage-form {
+    width: 60%; /* 100%로 수정 */
     margin: 0 auto;
-    background-color: #b8f1ff;
+    height: auto; /* height을 auto로 변경 */
     border-radius: 30px;
-}
+    text-align: center; /* 중앙 정렬을 위해 text-align을 center로 설정 */
+    display: flex;
+    flex-direction: row;
+    margin-top: 80px;
+    border: 1px solid #4e4e4e;
+    border-radius: 5px;
+  }
+  .bookmark-form .list{
+    display: flex;
+    flex-direction: row;
+    margin: 0 auto;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+  }
+  
+  .bookmark-form .list .box .img{
+    width: 160px;
+    height: 350px;
+    border-radius: 10px;
+    object-fit: cover;
+    background-color: aqua;
+  }
+  .bookmark-form .list .box {
+    margin-right: 25px;
+    
+  }
