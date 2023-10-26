@@ -13,5 +13,15 @@
     "username": "test",
     "password": "test",
     "display_name": "test"
+  },
+  {
+    "username": "ccc",
+    "password": "ccc",
+    "display_name": "ccc"
+  },
+  {
+    "username": "ddd",
+    "password": "ddd",
+    "display_name": "ddd"
   }
 ]
