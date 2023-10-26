@@ -37,6 +37,10 @@ router.post('/saveBookmark', (req, res) => {
 router.post('/removeBookmark', (req, res) => {
     const { username, postId } = req.body;
     
+    const path = require('path');
+    const bookmarksFilePath = path.join(__dirname, '../bookmarks.json');
+
+    
     if (bookmarks[username]) {
         const index = bookmarks[username].indexOf(postId);
         if (index !== -1) {
@@ -44,9 +48,14 @@ router.post('/removeBookmark', (req, res) => {
         }
     }
 
-    console.log("삭제 후 bookmarks:", bookmarks);
-    fs.writeFileSync('../bookmarks.json', JSON.stringify(bookmarks));
-    res.json({ success: true });
+    try {
+        console.log("삭제 후 bookmarks:", bookmarks);
+        fs.writeFileSync(bookmarksFilePath, JSON.stringify(bookmarks));
+        res.json({ success: true });
+    } catch (err) {
+        console.error("Error writing to bookmarks.json:", err);
+        res.status(500).json({ success: false, message: "Internal Server Error" });
+    }
 });
 
 router.get('/getBookmarks/:username', (req, res) => {

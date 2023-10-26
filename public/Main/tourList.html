@@ -38,13 +38,33 @@
             }
           });
 
-        // tourData 로딩
         fetch("/tourList")
           .then((response) => response.json())
           .then((data) => {
             tourData = data;
-            displayPage(currentPage);
-            createPaginationButtons();
+
+            const loggedUser = localStorage.getItem("loggedUser");
+            if (loggedUser) {
+              return fetch(`/getBookmarks/${loggedUser}`)
+                .then((res) => res.json())
+                .then((bookmarkedPosts) => {
+                  bookmarkedPosts.forEach((postId) => {
+                    const bookmarkIcon = document.querySelector(
+                      `[data-post-id="${postId}"]`
+                    );
+                    if (bookmarkIcon) {
+                      bookmarkIcon.src = "static/bookmark_check.png";
+                    }
+                  });
+                  displayPage(currentPage);
+                  createPaginationButtons();
+
+                  loadBookmarksForUser(loggedUser);
+                });
+            } else {
+              displayPage(currentPage);
+              createPaginationButtons();
+            }
           });
       };
     </script>
@@ -118,6 +138,10 @@
           bookmarkIcon.alt = "bookmark";
           bookmarkIcon.setAttribute("data-bookmarked", "false"); // 초기 상태를 설정합니다.
           bookmarkIcon.setAttribute("data-post-id", tour.id);
+          console.log(
+            `Rendering bookmark icon for post ${tour.id}:`,
+            bookmarkIcon.src
+          );
 
           bookmarkIcon.addEventListener("click", () => {
             const loggedUser = localStorage.getItem("loggedUser");
@@ -127,12 +151,14 @@
               return;
             }
 
-            if (bookmarkIcon.src.includes("bookmark.png")) {
+            if (bookmarkIcon.getAttribute("data-bookmarked") === "false") {
               bookmarkIcon.src = "static/bookmark_check.png";
+              bookmarkIcon.setAttribute("data-bookmarked", "true");
               console.log("북마크 클릭!");
               saveBookmarkToServer(loggedUser, tour.id); // 함수 호출
             } else {
               bookmarkIcon.src = "static/bookmark.png";
+              bookmarkIcon.setAttribute("data-bookmarked", "false");
               console.log("클릭 해제!");
               removeBookmarkFromServer(loggedUser, tour.id); // 함수 호출
             }
@@ -165,6 +191,7 @@
           .then((data) => {
             // 'data' contains the list of post IDs bookmarked by the user
             // Update the icons based on this data
+            console.log("Loaded bookmarks:", data);
             data.forEach((postId) => {
               const bookmarkIcon = document.querySelector(
                 `[data-post-id="${postId}"]`
@@ -174,11 +201,6 @@
               }
             });
           });
-      }
-
-      const loggedUser = localStorage.getItem("loggedUser");
-      if (loggedUser) {
-        loadBookmarksForUser(loggedUser);
       }
 
       function createPaginationButtons() {
