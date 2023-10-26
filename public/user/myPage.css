@@ -66,10 +66,10 @@ html
   
   .bookmark-form .list .box .img{
     width: 160px;
-    height: 350px;
+    height: 300px;
     border-radius: 10px;
     object-fit: cover;
-    background-color: aqua;
+    /*background-color: aqua;*/
   }
   .bookmark-form .list .box {
     margin-right: 25px; 
@@ -79,4 +79,5 @@ html
     width: 150px;  
     height: 300px; 
     object-fit: cover; /* 이미지 비율 유지 */
+    border-radius: 20px; 
 }
