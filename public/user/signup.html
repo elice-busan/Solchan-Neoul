@@ -71,11 +71,16 @@
                   // 회원가입 성공
                   alert(body.msg);
                   localStorage.setItem("loggedUser", body.username); // 로그인한 아이디 저장
+                  localStorage.setItem("displayName", body.display_name);
                   console.log(
                     "Registered User: ",
                     localStorage.getItem("loggedUser")
                   );
-                  window.location.href = "/start.html";
+                  console.log(
+                    "User nickname: ",
+                    localStorage.getItem("displayName")
+                  );
+                  window.location.href = "/user/myPage.html";
                 } else if (status === 400) {
                   // 회원가입 실패
                   alert(body.msg);
@@ -99,20 +104,25 @@
           <div class="main-left"></div>
           <div class="registration-pic"></div>
           <div class="registration-form">
+            <h3>SIGN UP</h3>
             <br />
+
             <form>
+              <p style="text-align: left">Id</p>
               <input type="text" placeholder="ID" id="name" /><br /><br />
+              <p style="text-align: left">Password</p>
               <input
                 type="password"
                 placeholder="Password"
                 id="password"
               /><br /><br />
+              <p style="text-align: left">user_name</p>
               <input
                 type="text"
-                placeholder="display_name"
+                placeholder="user_name"
                 id="display_name"
               /><br /><br />
-              <button id="btn-registration">registration</button>
+              <button id="btn-registration">register</button>
             </form>
           </div>
           <div class="main-right"></div>

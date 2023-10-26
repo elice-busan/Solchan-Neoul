@@ -72,10 +72,14 @@
                 if (status === 200) {
                   alert(body.msg);
                   localStorage.setItem("loggedUser", body.username); // 로그인한 아이디 저장
+                  localStorage.setItem("displayName", body.display_name); // 로그인한 닉네임 저장
                   const loggedUser = localStorage.getItem("loggedUser");
+                  const displayName = localStorage.getItem("displayName");
                   console.log("Logged User:", loggedUser);
+                  console.log("Display Name:", displayName);
+
                   setTimeout(() => {
-                    window.location.href = "/start.html"; // 로그인 성공시 홈페이지로 리다이렉션
+                    window.location.href = "/user/myPage.html"; // 로그인 성공시 홈페이지로 리다이렉션
                   }, 500); //500ms 지연 후 실행
                 } else if (status === 401) {
                   //로그인 실패
@@ -93,16 +97,18 @@
     </script>
     <div id="navbar-container"></div>
 
-    <p></p>
+    <p style="height: 100px"></p>
     <div id="wrap">
       <div id="main">
         <div id="head"></div>
         <div class="main-container">
-          <br />
           <div class="login-form">
+            <h5>LOGIN</h5>
             <br />
             <form>
+              <p style="text-align: left">Id</p>
               <input type="text" placeholder="ID" id="id" /><br /><br />
+              <p style="text-align: left">Password</p>
               <input
                 type="password"
                 placeholder="Password"
@@ -110,9 +116,15 @@
               /><br /><br />
               <button id="btn-login">login</button>
             </form>
-            <br /><br />
-            Don't have an account yet?
-            <a id="a1" href="./signup.html">Sign up</a>
+            <p style="text-align: center; width: 300px; margin-top: 20px">
+              Don't have an account yet?
+              <a
+                id="a1"
+                href="./signup.html"
+                style="font-weight: bold; font-size: 18px"
+                >Sign up</a
+              >
+            </p>
           </div>
         </div>
       </div>

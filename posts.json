@@ -3,9 +3,9 @@
         "title": "Minrak Subyeon Park",
         "text": "Gwanganri night sea hot plate",
         "images": [
-            "static/image_1.jpg",
-            "static/image_2.jpg",
-            "static/image_3.jpg"
+            "tourListImage/image1.jpg",
+            "tourListImage/image2.jpg",
+            "tourListImage/image3.jpg"
         ],
         "description": "It is the first place to get wind from the sea and the closest place to meet the night view of Marine City and Gwangan Bridge. Minrak Waterfront Park is loved as a resting place for men and women of all ages in summer. Since its opening in 1997, this park has been loved as a resting place for Busan citizens even before Marine City and Gwangan Bridge were established. The scenery with blue skies and endless seas at a glance maintains its place even if the surrounding environment changes many times. The open view of the blue sea seems to cool the hearts of the viewers. During the day, you can enjoy the sea quietly and alone, and at night, it is full of vitality and romance. Especially on summer nights, it is crowded with people trying to blow away tropical nights. At night, the lights of Marine City and Gwangan Bridge shine like stars in the night sky. Minrak Waterfront Park is also famous as a place where you can enjoy fireworks that decorate the night sky up close at the Busan Fireworks Festival held every fall. There are convenient facilities and food villages around Minrak Waterfront Park. There are a cafe where you can enjoy coffee in the background of the sea and a cart bar where you can taste fresh seafood, and many people enjoy raw fish packed from raw fish towns and live fish markets. If you enjoy sashimi on the street while looking at the night sea, you can have a special experience with the romance of the sea. Also, it is good to walk on the trail that runs from Minrak Waterfront Park to Gwangalli white sand beach. Here, you can watch the changing scenery of the sea while enjoying the sea breeze and purify your mind. There is also a bicycle lane in the park, so many cyclists can see it. During the day, it is also a good idea to use the free bicycle rental station located in front of 301 Samik Beach Town Apartment on Gwangalli Beach. Here, you can rent a bicycle for free by presenting your ID.",
         "address" : "361, Gwangan Beach-ro, Suyeong-gu, Busan",
@@ -19,41 +19,43 @@
         "id":"0"
     },
     {
-        "title": "test Attraction",
-        "text": "test description",
+        "title": "Oryuk Island",
+        "text": "National Designated Cultural Property Myeongseong No. 24",
         "images": [
-            "static/image_1.jpg",
-            "static/image_2.jpg",
-            "static/image_3.jpg"
+            "tourListImage/image4.jpg",
+            "tourListImage/image5.jpg",
+            "tourListImage/image6.jpg",
+            "tourListImage/image7.jpg"
         ],
-        "description":"",
-        "address" : "",
-        "phone" : "",
-        "fare" : "",
-        "holiday" :"",
-        "operating" :"",
-        "train":"",
-        "bus":"",
-        "remark":"",
+        "description":"The emerald sea where the East Sea and the South Sea meet. Five islands, sometimes six, above a brilliantly blue carpet.  The sea off Oryukdo Island has no shortage to make visitors' hearts flutter.    Oryukdo Island, one of the most beautiful islands in Busan, is a rocky island belonging to Yongho-dong, Nam-gu. 80 million years ago, it was designated as a Busan National Geopark in recognition of its geological value as a rock made by volcanic activity. In addition, it is a marine protected area where marine life subject to protection lives and a state-designated cultural property.  The islands that make up Oryukdo Island are Shield Island, Sol Island, Surisum Island, Fangot Island, Gul Island, and Lighthouse Island in the order close to the land. These islands are called Oryukdo because they become five islands at low tide and six islands at high tide. The Lighthouse Island, which is the farthest from the land, has Oryukdo Lighthouse. It is the only island on Oryukdo Island where people can enter. Oryukdo Lighthouse is located where ships entering Busan Port must pass and serves as a gateway to Busan.  To enjoy the open view of Oryukdo Island, go up to Sunrise Park. If you climb the hill with a slope above the parking lot, you can see the panoramic view of Oryukdo Island along with the cool sea breeze. Ecological wetlands, trails, pavilions, and benches are well established, making it an excellent picnic spot. Go down the hill and head to the skywalk where you can see Oryukdo Island right in front of your eyes. Skywalk, built on the rocky cliff at the end of the land, is a place where visitors who want to enjoy the thrill while feeling the dizzying sea under the glass floor are constantly laughing.  At the entrance of Sunrise Park, the Oryukdo Public Relations Center is located. It is a popular place for families with children as information on the marine ecosystem surrounding Oryukdo Island, the name of the island, and various native animals and plants can be heard through voice support. Oryukdo's mascot, Oryuki Photo Zone proof shot is a must-have course with children!  If you are curious about Oryukdo Island on the sea, you can take a cruise. If you go down to the parking lot of the large bus, there is a cruise ship dock on Oryukdo Island. You can see Oryukdo Island, which blends with the blue sea, and the attractive coastal scenery more closely. If the haenyeo village near the dock is opened, it cannot be overlooked. It's fun to taste fresh seafood collected by Busan haenyeo.",
+        "address" : "137 Oryukdo-ro, Nam-gu, Busan",
+        "phone" : "051-607-6395",
+        "fare" : "Free",
+        "holiday" :"Open 365 days a year",
+        "operating" :"09:00 ~ 19:00",
+        "subway":"Gyeongseong University and Pukyongdae Station on Line 2",
+        "bus":"24, 27, 131, Nam-gu 2 transfer → Oryukdo SK Apartment drop-off",
+        "remark":"Para parking lot for the disabled, toilet for the disabled, wheelchair accessible",
         "id":"1"
     },
     {
-        "title": "Yet Another Attraction",
-        "text": "Another description",
+        "title": "Haedong Yonggung Temple",
+        "text": "Korea's Most Beautiful Temple",
         "images": [
-            "static/image_1.jpg",
-            "static/image_2.jpg",
-            "static/image_3.jpg"
+            "tourListImage/image8.jpg",
+            "tourListImage/image9.jpg",
+            "tourListImage/image10.jpg",
+            "tourListImage/image11.jpg"
         ],
-        "description":"",
-        "address" : "",
-        "phone" : "",
-        "fare" : "",
-        "holiday" :"",
-        "operating" :"",
-        "train":"",
-        "bus":"",
-        "remark":"",
+        "description":"Have you ever heard the sound of waves rushing in from the cool open sea off Gijang. What if there was a coastal scene with admiration and a vast ocean with no end in sight right in front of my eyes.  Let's go to Haedong Yonggungsa Temple, a landscape where the sea, waves, wind, and breathtaking views await.    Haedong Yonggungsa Temple, located on the coast of Sirang-ri, Gijang, Busan, is named after the story that 尙 Jeongam (Jeongam 晸庵) saw the Bodhisattva Gwaweum ascending to heaven on a dragon in his dream. Haedong Yonggungsa Temple is hung like a picture at the end of the land where the mountain and the sea meet.    The first duodenal statue you meet on the way to the precinct is a place that gives travelers fun to find and take pictures with the animals of the year they were born. The zodiac is like a guardian deity who protects the land of the twelve defenses and prevents the invasion of evil spirits and prays for human misfortune. After passing through Iljumun Gate and entering the 108 steps that led between the pine forests, you will finally meet Haedong Yonggungsa Temple, which embraces the blue sea. On the Yongmungyo Bridge connected to the temple, many visitors are often seen throwing coins and making wishes because of the spirit of Yonggungsa Temple, where one wish must come true if you make a wish.    Like the saying that it is the most beautiful temple in Korea, the place where the entire precinct stands thanks to the sea view becomes a photo zone by itself. If you want to capture an open ocean view to your heart's content, I recommend climbing the stairs next to Daeungjeon Hall. You can encounter the sea-viewed Buddha with a benevolent smile and leave a life picture where the blue sea under your feet becomes mine.    If you want to enjoy the coastal scene where the rushing waves and strange rocks harmonize, follow the coastal trail. Sunrise Rock, which gives all the way to the end of the horizon across the sky and the sea, is definitely a hot place for Haedong Yonggungsa Temple. The coastal walkway, which belongs to course 1 of Haeparang-gil, which walks with the blue sea, also relaxes travelers.",
+        "address" : "86, Yonggung-gil, Gijang-eup, Gijang-gun, Busan",
+        "phone" : "051-722-7744",
+        "fare" : "Free",
+        "holiday" :"Open 365 days a year",
+        "operating" :"04:00 ~ 20:30",
+        "subway":"Exit 7 of Haeundae Station on Urban Railroad Line 2 → 181, 100, Haeundae 9 bus transfer → Haedong Yonggungsa Get off",
+        "bus":"Exit 1 of Osiria Station on the Donghae Line → Transfer to Osiria Station Bus Stop 139 Buses → Haedong Yonggungsa Get off",
+        "remark":"a handicapped toilet",
         "id":"2"
     },
     {
@@ -70,7 +72,7 @@
         "fare" : "",
         "holiday" :"",
         "operating" :"",
-        "train":"",
+        "subway":"",
         "bus":"",
         "remark":"",
         "id":"3"
@@ -89,7 +91,7 @@
         "fare" : "",
         "holiday" :"",
         "operating" :"",
-        "train":"",
+        "subway":"",
         "bus":"",
         "remark":"",
         "id":"4"
@@ -108,7 +110,7 @@
         "fare" : "",
         "holiday" :"",
         "operating" :"",
-        "train":"",
+        "subway":"",
         "bus":"",
         "remark":"",
         "id":"5"
@@ -127,7 +129,7 @@
         "fare" : "",
         "holiday" :"",
         "operating" :"",
-        "train":"",
+        "subway":"",
         "bus":"",
         "remark":"",
         "id":"6"
@@ -147,7 +149,7 @@
         "fare" : "",
         "holiday" :"",
         "operating" :"",
-        "train":"",
+        "subway":"",
         "bus":"",
         "remark":"",
         "id":"7"
@@ -167,7 +169,7 @@
         "fare" : "",
         "holiday" :"",
         "operating" :"",
-        "train":"",
+        "subway":"",
         "bus":"",
         "remark":"",
         "id":"8"
@@ -187,7 +189,7 @@
         "fare" : "",
         "holiday" :"",
         "operating" :"",
-        "train":"",
+        "subway":"",
         "bus":"",
         "remark":"",
         "id":"9"
@@ -207,7 +209,7 @@
         "fare" : "",
         "holiday" :"",
         "operating" :"",
-        "train":"",
+        "subway":"",
         "bus":"",
         "remark":"",
         "id":"10"
@@ -227,7 +229,7 @@
         "fare" : "",
         "holiday" :"",
         "operating" :"",
-        "train":"",
+        "subway":"",
         "bus":"",
         "remark":"",
         "id":"10"
@@ -247,7 +249,7 @@
         "fare" : "",
         "holiday" :"",
         "operating" :"",
-        "train":"",
+        "subway":"",
         "bus":"",
         "remark":"",
         "id":"10"

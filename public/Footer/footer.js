@@ -18,7 +18,7 @@ function createFooter() {
     const logoImage = document.createElement("img");
     logoImage.src = "../footer/footer_logo.png";
     logoImage.alt = "footer";
-    logoImage.width = "50";
+    logoImage.width = "60";
     footerLogo.appendChild(logoImage);
   
     footerContainer.appendChild(copyright);
