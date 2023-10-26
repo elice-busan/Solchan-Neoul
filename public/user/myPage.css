@@ -72,6 +72,11 @@ html
     background-color: aqua;
   }
   .bookmark-form .list .box {
-    margin-right: 25px;
-    
+    margin-right: 25px; 
   }
+
+  .img img {
+    width: 150px;  
+    height: 300px; 
+    object-fit: cover; /* 이미지 비율 유지 */
+}
