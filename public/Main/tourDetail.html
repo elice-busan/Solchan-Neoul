@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tour Detail</title>
     <link rel="stylesheet" href="tourDetail.css" />
-    <link rel="stylesheet" href="../Footer/footer.css">
+    <link rel="stylesheet" href="../Footer/footer.css" />
     <script src="../Nav/navbar.js"></script>
   </head>
   <body>
@@ -18,31 +18,31 @@
             document.getElementById("navbar-container").innerHTML = data;
             const loggedUser = localStorage.getItem("loggedUser");
 
-      // Check if the user is logged in
-      if (loggedUser) {
-        // User is logged in, so hide login and signup buttons
-        document.getElementById("loginBtn").style.display = "none";
-        document.getElementById("signupBtn").style.display = "none";
-        
-        // Show myPage and logout buttons
-        document.getElementById("myPageBtn").style.display = "block";
-        document.getElementById("logoutBtn").style.display = "block";
-      } else {
-        // User is not logged in, so hide myPage and logout buttons
-        document.getElementById("myPageBtn").style.display = "none";
-        document.getElementById("logoutBtn").style.display = "none";
+            // Check if the user is logged in
+            if (loggedUser) {
+              // User is logged in, so hide login and signup buttons
+              document.getElementById("loginBtn").style.display = "none";
+              document.getElementById("signupBtn").style.display = "none";
 
-        // Show login and signup buttons
-        document.getElementById("loginBtn").style.display = "block";
-        document.getElementById("signupBtn").style.display = "block";
-      }
+              // Show myPage and logout buttons
+              document.getElementById("myPageBtn").style.display = "block";
+              document.getElementById("logoutBtn").style.display = "block";
+            } else {
+              // User is not logged in, so hide myPage and logout buttons
+              document.getElementById("myPageBtn").style.display = "none";
+              document.getElementById("logoutBtn").style.display = "none";
+
+              // Show login and signup buttons
+              document.getElementById("loginBtn").style.display = "block";
+              document.getElementById("signupBtn").style.display = "block";
+            }
           });
-    
+
         // URL에서 id 추출
         const queryString = window.location.search;
         const urlParams = new URLSearchParams(queryString);
         const id = urlParams.get("id");
-    
+
         // 백엔드 API에서 데이터 가져오기
         fetch(`/tourDetail/${id}`)
           .then((response) => response.json())
@@ -50,7 +50,8 @@
             // 데이터를 페이지에 표시
             document.getElementById("title").textContent = data.title;
             document.getElementById("text").textContent = data.text;
-            document.getElementById("description").textContent = data.description;
+            document.getElementById("description").textContent =
+              data.description;
             document.getElementById("address").textContent = data.address;
             document.getElementById("phone").textContent = data.phone;
             document.getElementById("fare").textContent = data.fare;
@@ -62,19 +63,19 @@
             document.querySelector(".imgSlide img").src = data.images[0];
             tourImageData = data.images;
           });
-    
+
         const image = document.querySelector(".imgSlide img");
         const nextIcon = document.querySelector(".nextIcon");
         let tourImageData;
         let i = 0;
-    
+
         nextIcon.addEventListener("click", () => {
           i = (i + 1) % tourImageData.length;
           image.src = tourImageData[i];
         });
       };
     </script>
-    
+
     <div id="navbar-container"></div>
     <div id="head"></div>
     <div id="top">
@@ -89,57 +90,54 @@
     <div id="main">
       <div class="imgSlide">
         <img
-          src="" 
+          src=""
           alt="image"
           width="100%"
           height="100%"
           style="object-fit: cover; border-radius: 20px"
         />
         <img src="static/nextIcon.png" alt="nextIcon" class="nextIcon" />
-        <script>
-          
-        </script>
+        <script></script>
       </div>
       <div class="description">
         <div class="desc_title">Introduce</div>
-        <div class="desc_text" id="description">
-        </div>
+        <div class="desc_text" id="description"></div>
       </div>
       <div class="description">
-        <div class="desc_title">Additional<br>information</div>
+        <div class="desc_title">Additional<br />information</div>
         <div class="icons">
           <div class="icon">
             <img src="static/icon1.png" alt="icon1" />
             <div>
-              <p style="font-weight: bold;">Address</p>
+              <p style="font-weight: bold">Address</p>
               <p id="address"></p>
             </div>
           </div>
           <div class="icon">
             <img src="static/icon2.png" alt="icon2" />
             <div>
-              <p style="font-weight: bold;">Phone number</p>
+              <p style="font-weight: bold">Phone number</p>
               <p id="phone"></p>
             </div>
           </div>
           <div class="icon">
             <img src="static/icon3.png" alt="icon3" />
             <div>
-              <p style="font-weight: bold;">Fare</p>
+              <p style="font-weight: bold">Fare</p>
               <p id="fare"></p>
             </div>
           </div>
           <div class="icon">
             <img src="static/icon4.png" alt="icon4" />
             <div>
-              <p style="font-weight: bold;">Holiday</p>
+              <p style="font-weight: bold">Holiday</p>
               <p id="holiday"></p>
             </div>
           </div>
           <div class="icon">
             <img src="static/icon5.png" alt="icon5" />
             <div>
-              <p style="font-weight: bold;">Operating day and time</p>
+              <p style="font-weight: bold">Operating day and time</p>
               <p id="operating"></p>
             </div>
           </div>
@@ -148,22 +146,28 @@
       <div class="description">
         <div class="desc_title">Map</div>
         <div class="desc_text">
-          <div id="map" style="width: 800px; height: 400px; border-radius: 20px;"></div>
-          <div style="flex-direction: column; display:flex;">
-            <p style="font-weight: bold; margin-right: 30px;">Public transport</p>
+          <div
+            id="map"
+            style="width: 800px; height: 400px; border-radius: 20px"
+          ></div>
+          <div style="flex-direction: column; display: flex">
+            <p style="font-weight: bold; margin-right: 30px">
+              Public transport
+            </p>
             <p id="subway"></p>
             <p id="bus"></p>
           </div>
-          <div style="flex-direction: column; display:flex;">
-            <p style="font-weight: bold; margin-right: 30px;">Other</p>
+          <div style="flex-direction: column; display: flex">
+            <p style="font-weight: bold; margin-right: 30px">Other</p>
             <p id="remark"></p>
           </div>
-          
-          
         </div>
       </div>
     </div>
-    <script type="text/javascript" src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=b4e52c2d28f872d77f951b1551b9c36b"></script>
+    <script
+      type="text/javascript"
+      src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=b4e52c2d28f872d77f951b1551b9c36b"
+    ></script>
     <script type="text/javascript">
       var container = document.getElementById("map"); //지도를 담을 영역의 DOM 레퍼런스
       var options = {

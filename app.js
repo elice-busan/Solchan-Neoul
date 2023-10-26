@@ -4,6 +4,7 @@ const connectDB = require("./db")
 const cookieParser = require('cookie-parser');
 
 const userRouter = require('./routes/userRouter');
+const bookmarksRouter = require('./routes/bookmarksRouter');
 
 const app = express();
 const PORT = 3000;
@@ -55,3 +56,5 @@ app.get('/tourList', (req, res) => {
 });
 
 app.use("/", userRouter);
+
+app.use(bookmarksRouter);
