@@ -85,17 +85,14 @@
 
           const imgDiv = document.createElement("div");
           imgDiv.className = "img";
+
           const image = document.createElement("img");
-          image.src = tour.image; // 포스트의 첫 번째 이미지 사용
+          image.src = "../Main/" + tour.images[0]; // 포스트의 첫 번째 이미지 사용
           imgDiv.appendChild(image);
 
           const titleDiv = document.createElement("div");
           titleDiv.id = "title";
           titleDiv.textContent = tour.title;
-
-          const subtitleDiv = document.createElement("div");
-          subtitleDiv.id = "subtitle";
-          subtitleDiv.textContent = tour.text;
 
           // 클릭 이벤트 리스너 추가
           box.addEventListener("click", () => {
@@ -104,7 +101,6 @@
 
           box.appendChild(imgDiv);
           box.appendChild(titleDiv);
-          box.appendChild(subtitleDiv);
 
           listContainer.appendChild(box);
         });
