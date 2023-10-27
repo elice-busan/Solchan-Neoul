@@ -183,8 +183,8 @@
             "tourListImage/금정산 2.jpg",
             "tourListImage/금정산 3.jpg"
         ],
-        "description":"",
-        "address" : "",
+        "description":"금정산",
+        "address" : "금정산",
         "phone" : "",
         "fare" : "",
         "holiday" :"",
@@ -203,8 +203,8 @@
             "tourListImage/일광해수욕장 2.jpg",
             "tourListImage/일광해수욕장 3.jpg"
         ],
-        "description":"",
-        "address" : "",
+        "description":"일광 해수욕장",
+        "address" : "일광 해수욕장",
         "phone" : "",
         "fare" : "",
         "holiday" :"",
@@ -226,8 +226,8 @@
             "tourListImage/부산박물관 5.jpg"
         ],
 
-        "description":"",
-        "address" : "",
+        "description":"부산박물관",
+        "address" : "부산박물관",
         "phone" : "",
         "fare" : "",
         "holiday" :"",
@@ -246,8 +246,8 @@
             "static/image_2.jpg",
             "static/image_3.jpg"
         ],
-        "description":"",
-        "address" : "",
+        "description":"test",
+        "address" : "test",
         "phone" : "",
         "fare" : "",
         "holiday" :"",

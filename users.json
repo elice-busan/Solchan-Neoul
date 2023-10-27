@@ -3,40 +3,5 @@
     "username": "aaa",
     "password": "aaa",
     "display_name": "aaa"
-  },
-  {
-    "username": "bbb",
-    "password": "bbb",
-    "display_name": "bbb"
-  },
-  {
-    "username": "test",
-    "password": "test",
-    "display_name": "test"
-  },
-  {
-    "username": "ccc",
-    "password": "ccc",
-    "display_name": "ccc"
-  },
-  {
-    "username": "ddd",
-    "password": "ddd",
-    "display_name": "ddd"
-  },
-  {
-    "username": "aaa1",
-    "password": "aaa",
-    "display_name": "aaa1"
-  },
-  {
-    "username": "eee",
-    "password": "eee",
-    "display_name": "eee"
-  },
-  {
-    "username": "ggg",
-    "password": "ggg",
-    "display_name": "ggg"
   }
 ]
