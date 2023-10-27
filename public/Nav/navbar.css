@@ -1,88 +1,97 @@
-*
-{
+* {
     margin: 0;
     padding: 0;
-    font-family: 'Noto Sans KR';
+    font-family: 'Inter', sans-serif;
 }
-@font-face {
-  font-family: 'Noto Sans KR';
-  font-style: normal;
-  font-weight: 400;
-  src: url('../assets/fonts/noto-sans/noto-sans-kr-v21-korean-regular.woff2') format('woff2')
-}
+
 .navbar {
     display: flex;
-    justify-content: center; /* 수평 가운데 정렬로 변경 */
+    justify-content: space-between;
     align-items: center;
     position: fixed;
-    padding: 10px 0; /* 네비게이션 바 패딩 수정 (20px에서 좌우로 10px씩만 적용) */
+    padding: 10px 20px;
     border-bottom: 1px solid #e0e0e0;
     height: 70px;
     background-color: #ffffff;
     z-index: 27;
-    width: 100%; /* 100% 너비로 변경 */
-    left: 0; /* 왼쪽 여백을 0으로 설정 */
-    right: 0; /* 오른쪽 여백을 0으로 설정 */
+    width: 100%;
+    left: 0;
+    right: 0;
+    max-width: 1500px;
+    margin: 0 auto;
 }
-
 
 .main-menu {
-    width: 70%;
     display: flex;
-    left: 20px; /* 메인 메뉴 항목들을 왼쪽으로 배치 */
     align-items: center;
 }
-.category{
-    margin: 0 auto;
+
+.category {
+    display: flex;
+    justify-content: center;
     font-weight: bold;
     align-items: center;
+    text-align: center; /* Center text within the div */
 }
 
-.user-menu {/* 절대 위치 설정 */
-    right: 60px; /* 오른쪽에서 20px 떨어지도록 설정 */
+.category a {
+    display: inline-block; /* Ensure the links are displayed inline */
+    margin: 0 10px;
+    text-decoration: none;
+    color: #333;
+    transition: color 0.3s;
+}
+
+
+.user-menu {
     display: flex;
     align-items: center;
 }
 
+
 .navbar a {
-    margin: 0 10px; /* 링크 간 간격 설정 */
-    text-decoration: none; /* 밑줄 제거 */
-    color: #333; /* 링크 색상 설정 */
+    margin: 0 10px;
+    text-decoration: none;
+    color: #333;
+    transition: color 0.3s; /* Smooth color transition on hover */
 }
 
 .navbar a:hover {
-    color: #00BFFF; /* 호버 시 색상 변경 */
+    color: #00BFFF;
 }
 
 .navbar a:hover svg {
-    fill: #00BFFF; 
+    fill: #00BFFF;
 }
 
-.user{
+.user {
     text-align: center;
     border-radius: 30px;
     background-color: #ffffff;
     color: #333;
     border: 1px solid;
-
     padding: 10px 20px;
     width: auto;
-
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition on hover */
 }
 
 .navbar .category a:hover {
-    color: #60d1f7; 
+    color: #60d1f7;
 }
-
 
 .user:hover {
     background-color: #60d1f7;
     color: #fff;
 }
-.navbar .user-menu .user:hover{
+
+.navbar .user-menu .user:hover {
     color: #fff;
 }
 
-.navbar a.signUp:hover {
-    color: #ffffff; 
+/* (The rest of the CSS code remains the same) */
+
+@media (min-width: 768px) {
+    .category {
+        display: flex;
+    }
 }
