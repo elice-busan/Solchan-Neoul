@@ -68,13 +68,25 @@ html
     background-color: rgb(255, 255, 255, 0);
     font-weight: bold;
 }
+
 .banner-text-zone .p1
 {
     text-align: left;
     font-size: 35px;
     color: #ffffff;
     text-shadow: 2px 2px 4px rgb(54, 54, 54);
+    animation-duration: 2s;
+    animation-name: slide_p1;
     
+}
+@keyframes slide_p1{
+    from {
+        margin-left: -400px;
+    }
+
+    to {
+        margin-left: 0px;
+    }
 }
 .banner-text-zone .p2
 {
@@ -82,7 +94,17 @@ html
     font-size: 50px;
     color: #ffffff;
     text-shadow: 2px 2px 4px rgb(54, 54, 54);
-    
+    animation-duration: 2s;
+    animation-name: slide_p2;
+}
+@keyframes slide_p2{
+    from {
+        margin-left: -400px;
+    }
+
+    to {
+        margin-left: 0px;
+    }
 }
 .banner-text-zone .p3
 {
@@ -90,7 +112,17 @@ html
     font-size: 45px;
     color: #ffffff;
     text-shadow: 2px 2px 4px rgb(54, 54, 54);
-    
+    animation-duration: 2s;
+    animation-name: slide_p3;
+}
+@keyframes slide_p3{
+    from {
+        margin-left: -400px;
+    }
+
+    to {
+        margin-left: 0px;
+    }
 }
 #about
 {
