@@ -54,7 +54,8 @@ router.post("/login", async (req, res) => {
   }
 });
 
-/*const fs = require("fs").promises;
+/*
+const fs = require("fs").promises;
 const path = require("path");
 
 router.get("/");
@@ -81,12 +82,10 @@ router.post("/signup", async (req, res) => {
 
   if (existingUser) {
     // 회원가입 실패
-    return res
-      .status(400)
-      .json({
-        success: false,
-        msg: "User already exists! Please sign up again.",
-      });
+    return res.status(400).json({
+      success: false,
+      msg: "User already exists! Please sign up again.",
+    });
   }
 
   users.push({ username, password, display_name });
@@ -141,6 +140,6 @@ router.post("/login", async (req, res) => {
       .json({ http_status: 401, msg: "Invalid username or password!" });
   }
 });
+*/
 
 module.exports = router;
-*/
