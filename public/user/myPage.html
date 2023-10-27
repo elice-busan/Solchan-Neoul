@@ -10,7 +10,10 @@
     <title>Solchan-Neoul | Login</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'>
+    <link
+      href="https://fonts.googleapis.com/css?family=Inter"
+      rel="stylesheet"
+    />
     <link rel="icon" href="./favicon.png" />
     <link rel="stylesheet" href="./myPage.css" />
     <link rel="stylesheet" href="../Footer/footer.css" />
@@ -56,22 +59,6 @@
           });
       };
 
-      /*
-      function loadBookmarksForUser(username) {
-        fetch(`/getBookmarks/${username}`)
-          .then((response) => response.json())
-          .then((bookmarkedPostIds) => {
-            // 북마크된 포스트 데이터 가져오기
-            fetch("/tourList")
-              .then((response) => response.json())
-              .then((allTourData) => {
-                const bookmarkedTours = allTourData.filter((tour) =>
-                  bookmarkedPostIds.includes(tour.id)
-                );
-                displayBookmarkedTours(bookmarkedTours);
-              });
-          });
-      }*/
       function loadBookmarksForUser(username) {
         fetch(`/getBookmarks/${username}`)
           .then((response) => response.json())
