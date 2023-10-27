@@ -5,50 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Solchan-Neoul | Tour List</title>
     <link rel="stylesheet" href="tourList.css" />
-    <link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'>
     <link rel="stylesheet" href="../Footer/footer.css" />
     <script src="../Nav/navbar.js"></script>
   </head>
   <body>
     <script>
-      // 사용자 정보를 가져오는 함수
-      function loadUserData(username) {
-        fetch(`/api/user/${username}`)
-          .then((response) => {
-            if (!response.ok) {
-              throw new Error(
-                `Server responded with status: ${response.status}`
-              );
-            }
-            return response.json();
-          })
-          .then((user) => {
-            const bookmarkedPosts = user.bookmarks || [];
-            fetch("/api/tourList")
-              .then((response) => {
-                if (!response.ok) {
-                  throw new Error(
-                    `Server responded with status: ${response.status}`
-                  );
-                }
-                return response.json();
-              })
-              .then((tourData) => {
-                displayPage(currentPage, bookmarkedPosts, tourData);
-                createPaginationButtons();
-              })
-              .catch((error) => {
-                console.error("Error fetching tour list from server:", error);
-              });
-          })
-          .catch((error) => {
-            console.error(
-              "Error fetching user information from server:",
-              error
-            );
-          });
-      }
-
       window.onload = function () {
         // Navbar 로딩
         fetch("../Nav/navbar.html")
@@ -57,6 +18,7 @@
             document.getElementById("navbar-container").innerHTML = data;
             const loggedUser = sessionStorage.getItem("loggedUser");
 
+            // Check if the user is logged in
             if (loggedUser) {
               // User is logged in, so hide login and signup buttons
               document.getElementById("loginBtn").style.display = "none";
@@ -65,9 +27,6 @@
               // Show myPage and logout buttons
               document.getElementById("myPageBtn").style.display = "block";
               document.getElementById("logoutBtn").style.display = "block";
-
-              // 사용자 정보를 가져옴
-              loadUserData(loggedUser);
             } else {
               // User is not logged in, so hide myPage and logout buttons
               document.getElementById("myPageBtn").style.display = "none";
@@ -76,24 +35,25 @@
               // Show login and signup buttons
               document.getElementById("loginBtn").style.display = "block";
               document.getElementById("signupBtn").style.display = "block";
+            }
+          });
 
-              // 투어 리스트를 가져오는 부분
-              fetch("/api/tourList")
-                .then((response) => {
-                  if (!response.ok) {
-                    throw new Error(
-                      `Server responded with status: ${response.status}`
-                    );
-                  }
-                  return response.json();
-                })
-                .then((tourData) => {
-                  displayPage(currentPage, [], tourData); // 로그인하지 않은 사용자에게는 빈 북마크 배열 전달
+        fetch("/api/tourList")
+          .then((response) => response.json())
+          .then((data) => {
+            tourData = data;
+            const loggedUser = sessionStorage.getItem("loggedUser");
+            console.log("투어 리스트 : ", loggedUser);
+            if (loggedUser) {
+              fetch(`/getBookmarks/${loggedUser}`)
+                .then((res) => res.json())
+                .then((bookmarkedPosts) => {
+                  displayPage(currentPage, bookmarkedPosts);
                   createPaginationButtons();
-                })
-                .catch((error) => {
-                  console.error("Error fetching tour list from server:", error);
                 });
+            } else {
+              displayPage(currentPage);
+              createPaginationButtons();
             }
           });
       };
@@ -176,6 +136,7 @@
 
           bookmarkIcon.addEventListener("click", () => {
             const loggedUser = sessionStorage.getItem("loggedUser");
+            console.log("북마크 클릭 : ", loggedUser);
 
             if (!loggedUser) {
               alert("로그인이 필요한 서비스입니다.");

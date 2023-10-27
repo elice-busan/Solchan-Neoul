@@ -6,6 +6,7 @@ const userRouter = require("./routes/userRouter");
 const bookmarksRouter = require("./routes/bookmarksRouter");
 const Board = require("./schemas/board");
 const User = require("./schemas/user");
+const tourRouter = require("./routes/tourData");
 
 const app = express();
 const PORT = 3000;
@@ -41,6 +42,7 @@ app.get("/tourDetail/:id", (req, res) => {
 
 app.get("/api/tourList", async (req, res) => {
   try {
+    console.log("확인용");
     const tours = await Board.find();
     res.json(tours);
   } catch (error) {
@@ -89,6 +91,8 @@ app.get("/api/user/:username", (req, res) => {
 app.use("/", userRouter);
 
 app.use(bookmarksRouter);
+
+app.use("/", tourRouter);
 
 // Error handling middleware
 app.use((err, req, res, next) => {
