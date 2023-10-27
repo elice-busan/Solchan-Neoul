@@ -160,6 +160,7 @@ video {
     .banner-text-zone {
         padding: 20px; /* Add some padding for readability */
         width: 100%; /* Take the full width of the screen */
+        padding-left: 10px;
     }
     .banner-text {
         margin: 0 auto;
