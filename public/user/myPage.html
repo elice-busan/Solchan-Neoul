@@ -59,6 +59,7 @@
           });
       };
 
+      /*
       function loadBookmarksForUser(username) {
         fetch(`/getBookmarks/${username}`)
           .then((response) => response.json())
@@ -70,6 +71,24 @@
                 const bookmarkedTours = allTourData.filter((tour) =>
                   bookmarkedPostIds.includes(tour.id)
                 );
+                displayBookmarkedTours(bookmarkedTours);
+              });
+          });
+      }*/
+      function loadBookmarksForUser(username) {
+        fetch(`/getBookmarks/${username}`)
+          .then((response) => response.json())
+          .then((bookmarkedPostIds) => {
+            // 북마크된 포스트 데이터 가져오기
+            fetch("/getBookmarkedTours", {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify({ bookmarkedPostIds }),
+            })
+              .then((response) => response.json())
+              .then((bookmarkedTours) => {
                 displayBookmarkedTours(bookmarkedTours);
               });
           });

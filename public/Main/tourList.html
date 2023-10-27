@@ -10,6 +10,44 @@
   </head>
   <body>
     <script>
+      // 사용자 정보를 가져오는 함수
+      function loadUserData(username) {
+        fetch(`/api/user/${username}`)
+          .then((response) => {
+            if (!response.ok) {
+              throw new Error(
+                `Server responded with status: ${response.status}`
+              );
+            }
+            return response.json();
+          })
+          .then((user) => {
+            const bookmarkedPosts = user.bookmarks || [];
+            fetch("/api/tourList")
+              .then((response) => {
+                if (!response.ok) {
+                  throw new Error(
+                    `Server responded with status: ${response.status}`
+                  );
+                }
+                return response.json();
+              })
+              .then((tourData) => {
+                displayPage(currentPage, bookmarkedPosts, tourData);
+                createPaginationButtons();
+              })
+              .catch((error) => {
+                console.error("Error fetching tour list from server:", error);
+              });
+          })
+          .catch((error) => {
+            console.error(
+              "Error fetching user information from server:",
+              error
+            );
+          });
+      }
+
       window.onload = function () {
         // Navbar 로딩
         fetch("../Nav/navbar.html")
@@ -18,7 +56,6 @@
             document.getElementById("navbar-container").innerHTML = data;
             const loggedUser = sessionStorage.getItem("loggedUser");
 
-            // Check if the user is logged in
             if (loggedUser) {
               // User is logged in, so hide login and signup buttons
               document.getElementById("loginBtn").style.display = "none";
@@ -27,6 +64,9 @@
               // Show myPage and logout buttons
               document.getElementById("myPageBtn").style.display = "block";
               document.getElementById("logoutBtn").style.display = "block";
+
+              // 사용자 정보를 가져옴
+              loadUserData(loggedUser);
             } else {
               // User is not logged in, so hide myPage and logout buttons
               document.getElementById("myPageBtn").style.display = "none";
@@ -35,37 +75,25 @@
               // Show login and signup buttons
               document.getElementById("loginBtn").style.display = "block";
               document.getElementById("signupBtn").style.display = "block";
-            }
-          });
 
-        fetch("/api/tourList")
-          .then((response) => {
-            if (!response.ok) {
-              console.log(response.text()); // 응답 내용 로깅
-
-              throw new Error(
-                `Server responded with status: ${response.status}`
-              );
-            }
-            return response.json();
-          })
-          .then((data) => {
-            tourData = data;
-            const loggedUser = sessionStorage.getItem("loggedUser");
-            if (loggedUser) {
-              fetch(`/getBookmarks/${loggedUser}`)
-                .then((res) => res.json())
-                .then((bookmarkedPosts) => {
-                  displayPage(currentPage, bookmarkedPosts);
+              // 투어 리스트를 가져오는 부분
+              fetch("/api/tourList")
+                .then((response) => {
+                  if (!response.ok) {
+                    throw new Error(
+                      `Server responded with status: ${response.status}`
+                    );
+                  }
+                  return response.json();
+                })
+                .then((tourData) => {
+                  displayPage(currentPage, [], tourData); // 로그인하지 않은 사용자에게는 빈 북마크 배열 전달
                   createPaginationButtons();
+                })
+                .catch((error) => {
+                  console.error("Error fetching tour list from server:", error);
                 });
-            } else {
-              displayPage(currentPage);
-              createPaginationButtons();
             }
-          })
-          .catch((error) => {
-            console.error("Error fetching tour list from server:", error);
           });
       };
     </script>

@@ -1,6 +1,6 @@
-/*const express = require("express");
+const express = require("express");
 const router = express.Router();
-const User = require("../models/User");
+const User = require("../schemas/user");
 
 const fs = require("fs");
 const bookmarks = require("../bookmarks.json");
@@ -61,8 +61,8 @@ router.get("/getBookmarks/:username", (req, res) => {
   const username = req.params.username;
   res.json(bookmarks[username] || []);
 });
-*/
 
+/*
 const express = require("express");
 const router = express.Router();
 const User = require("../schemas/user"); // User 모델을 가져옵니다.
@@ -122,7 +122,5 @@ router.get("/getBookmarks/:username", async (req, res) => {
     res.status(500).json({ success: false, message: "Internal Server Error" });
   }
 });
-
-module.exports = router;
-
+*/
 module.exports = router;
