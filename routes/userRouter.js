@@ -34,6 +34,7 @@ router.post("/signup", async (req, res) => {
 // 로그인 라우터
 router.post("/login", async (req, res) => {
   const { username, password } = req.body;
+  console.log(req.body);
 
   try {
     const user = await User.findOne({ username, password });

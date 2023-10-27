@@ -41,6 +41,8 @@
         fetch("/api/tourList")
           .then((response) => {
             if (!response.ok) {
+              console.log(response.text()); // 응답 내용 로깅
+
               throw new Error(
                 `Server responded with status: ${response.status}`
               );
