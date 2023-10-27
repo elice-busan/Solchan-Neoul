@@ -10,10 +10,7 @@
     <title>Solchan-Neoul | Login</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Charm&family=Oswald:wght@500&display=swap"
-      rel="stylesheet"
-    />
+    <link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'>
     <link rel="icon" href="./favicon.png" />
     <link rel="stylesheet" href="./login.css" />
     <link rel="stylesheet" href="../Footer/footer.css" />
@@ -70,10 +67,10 @@
                 // 로그인 성공
                 if (status === 200) {
                   alert(body.msg);
-                  localStorage.setItem("loggedUser", body.username); // 로그인한 아이디 저장
-                  localStorage.setItem("displayName", body.display_name); // 로그인한 닉네임 저장
-                  const loggedUser = localStorage.getItem("loggedUser");
-                  const displayName = localStorage.getItem("displayName");
+                  sessionStorage.setItem("loggedUser", body.username); // 로그인한 아이디 저장
+                  sessionStorage.setItem("displayName", body.display_name); // 로그인한 닉네임 저장
+                  const loggedUser = sessionStorage.getItem("loggedUser");
+                  const displayName = sessionStorage.getItem("displayName");
                   console.log("Logged User:", loggedUser);
                   console.log("Display Name:", displayName);
 

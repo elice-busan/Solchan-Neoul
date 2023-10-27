@@ -16,7 +16,7 @@
           .then((response) => response.text())
           .then((data) => {
             document.getElementById("navbar-container").innerHTML = data;
-            const loggedUser = localStorage.getItem("loggedUser");
+            const loggedUser = sessionStorage.getItem("loggedUser");
 
             // Check if the user is logged in
             if (loggedUser) {
@@ -38,11 +38,12 @@
             }
           });
 
-        fetch("/tourList")
+        fetch("/api/tourList")
           .then((response) => response.json())
           .then((data) => {
             tourData = data;
-            const loggedUser = localStorage.getItem("loggedUser");
+            const loggedUser = sessionStorage.getItem("loggedUser");
+            console.log("투어 리스트 : ", loggedUser);
             if (loggedUser) {
               fetch(`/getBookmarks/${loggedUser}`)
                 .then((res) => res.json())
@@ -108,9 +109,6 @@
             console.log(tour);
             // 상세 페이지로 이동 (예: URL 변경)
             window.location.href = `tourDetail.html?id=${tour.id}`;
-
-            // const imageUrl = tour.image;
-            // window.location.href = `tourDetail.html?title=${encodeURIComponent(tour.title)}&text=${encodeURIComponent(tour.text)}&image=${encodeURIComponent(imageUrl)}`;
           });
           const nextIcon = document.createElement("img");
           nextIcon.className = "next";
@@ -134,7 +132,8 @@
           bookmarkIcon.setAttribute("data-post-id", tour.id);
 
           bookmarkIcon.addEventListener("click", () => {
-            const loggedUser = localStorage.getItem("loggedUser");
+            const loggedUser = sessionStorage.getItem("loggedUser");
+            console.log("북마크 클릭 : ", loggedUser);
 
             if (!loggedUser) {
               alert("로그인이 필요한 서비스입니다.");
