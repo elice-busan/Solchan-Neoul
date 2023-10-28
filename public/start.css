@@ -82,10 +82,12 @@ html
 @keyframes slide_p1{
     from {
         margin-left: -400px;
+        opacity: 0;
     }
 
     to {
         margin-left: 0px;
+        opacity: 1;
     }
 }
 .banner-text-zone .p2
@@ -100,10 +102,12 @@ html
 @keyframes slide_p2{
     from {
         margin-left: -400px;
+        opacity: 0;
     }
 
     to {
         margin-left: 0px;
+        opacity: 1;
     }
 }
 .banner-text-zone .p3
@@ -118,10 +122,12 @@ html
 @keyframes slide_p3{
     from {
         margin-left: -400px;
+        opacity: 0;
     }
 
     to {
         margin-left: 0px;
+        opacity: 1;
     }
 }
 #about
