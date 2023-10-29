@@ -26,7 +26,7 @@
     window.onload = function () {
       
       // Navbar 로딩
-      fetch("../Nav/navbar.html")
+      fetch("Nav/navbar.html")
         .then((response) => response.text())
         .then((data) => {
           document.getElementById("navbar-container").innerHTML = data;
@@ -56,7 +56,7 @@
   <style type="text/css">
     .swiper-container {
       height:450px;
-      border:5px solid rgb(189, 189, 189);
+      border:0px solid rgb(189, 189, 189);
       box-shadow:0 0 20px #ffffff inset;
       background-color: rgb(255, 255, 255);
       border-radius: 10px;
@@ -90,12 +90,15 @@
         <div class="about-nav"></div>
         <div class="item1"></div>
         <div class="item2"></div>
+        <a href="https://www.expo2030busan.kr/index.do" class="alink" target="_blank">
         <div class="item3"></div>
+      </a>
         <div class="item4"></div>
       </div>
     </div>
+    <p >How about this?</p>
     <div id="contents">
-      <div class="contents-nav"></div>
+      <div class="contents-nav" style="color: #303030; font-weight: bold; margin-bottom: 20px; margin-top: 50px;" >How about this?</div>
       <div class="contents-container">
         <div class="swiper-container">
           <div class="swiper-wrapper">
@@ -114,22 +117,25 @@
         </div>
       </div>
     </div>
+    <p style="color: #303030; font-weight: bold; margin-bottom: 20px;">BANNER</p>
     <div id="event">
       <div class="event-container">
         <div class="event-zone">
           <div class="slide">
             <a href="http://www.bfo.or.kr/festival/info/01.asp?MENUDIV=1" class="alink" target="_blank">
-              <div class="alink-img1"></div>
+              <div class="alink-img1">
+                <img src="image/event1.jpg" alt="" style="height: 300px; width: 1000px;">
+              </div>
             </a>
           </div>
           <div class="slide">
             <a href="https://www.saf2023.org/" class="alink" target="_blank">
-              <div class="alink-img2"></div>
+              <div class="alink-img2"><img src="image/event2.jpg" alt="" style="height: 300px; width: 1000px;"></div>
             </a>
           </div>
           <div class="slide">
-            <a href="https://www.dongnae.go.kr/festival/index.dongnae?contentsSid=169" class="alink" target="_blank">
-              <div class="alink-img3"></div>
+            <a href="https://www.hibimf.org/" class="alink" target="_blank">
+              <div class="alink-img3"><img src="image/event3.jpg" alt="" style="height: 300px; width: 1000px;"></div>
             </a>
           </div>
         </div>

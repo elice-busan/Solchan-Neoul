@@ -43,6 +43,7 @@
         const queryString = window.location.search;
         const urlParams = new URLSearchParams(queryString);
         const id = urlParams.get("id");
+        
 
         // 백엔드 API에서 데이터 가져오기
         fetch(`/tourDetail/${id}`)
@@ -63,12 +64,16 @@
             document.getElementById("remark").textContent = data.remark;
             document.querySelector(".imgSlide img").src = data.images[0];
             tourImageData = data.images;
+            x=data.x;
+            y=data.y;
           });
 
         const image = document.querySelector(".imgSlide img");
         const nextIcon = document.querySelector(".nextIcon");
         let tourImageData;
+        
         let i = 0;
+
 
         nextIcon.addEventListener("click", () => {
           i = (i + 1) % tourImageData.length;
@@ -166,18 +171,41 @@
       </div>
     </div>
     <script
+      
       type="text/javascript"
       src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=b4e52c2d28f872d77f951b1551b9c36b"
     ></script>
     <script type="text/javascript">
-      var container = document.getElementById("map"); //지도를 담을 영역의 DOM 레퍼런스
-      var options = {
-        //지도를 생성할 때 필요한 기본 옵션
-        center: new kakao.maps.LatLng(33.450701, 126.570667), //지도의 중심좌표.
-        level: 3, //지도의 레벨(확대, 축소 정도)
-      };
+// URL에서 id 추출
+const queryString = window.location.search;
+const urlParams = new URLSearchParams(queryString);
+const id = urlParams.get("id");
 
-      var map = new kakao.maps.Map(container, options); //지도 생성 및 객체 리턴
+(async () => {
+  const response = await fetch(`/tourDetail/${id}`);
+  const data = await response.json();
+
+  x = data.x;
+  y = data.y;
+
+  var container = document.getElementById("map"); //지도를 담을 영역의 DOM 레퍼런스
+  var options = {
+    //지도를 생성할 때 필요한 기본 옵션
+    center: new kakao.maps.LatLng(x, y), //지도의 중심좌표.
+    level: 3, //지도의 레벨(확대, 축소 정도)
+  };
+
+  var map = new kakao.maps.Map(container, options); //지도 생성 및 객체 리턴
+  var markerPosition  = new kakao.maps.LatLng(x, y); 
+var marker = new kakao.maps.Marker({
+    position: markerPosition
+});
+marker.setMap(map);
+})();
+
+
+// 마커가 지도 위에 표시되도록 설정합니다
+
     </script>
     <script src="../Footer/footer.js"></script>
   </body>

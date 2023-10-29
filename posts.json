@@ -16,6 +16,8 @@
         "subway":"subway The area of Gwangan Station 2nd Station on Urban Railroad Line 2",
         "bus":"Bus 41, 83-1, 210 Minrak Subyeon Park Stopover",
         "remark":"Access to parking areas for the disabled, toilets for the disabled, braille blocks, and wheelchairs on trails is available",
+        "x":"35.156000361671296",
+        "y": "129.1343452978425",
         "id":"0"
     },
     {
@@ -36,6 +38,8 @@
         "subway":"Gyeongseong University and Pukyongdae Station on Line 2",
         "bus":"24, 27, 131, Nam-gu 2 transfer → Oryukdo SK Apartment drop-off",
         "remark":"Para parking lot for the disabled, toilet for the disabled, wheelchair accessible",
+        "x":35.09790986035203,
+        "y":129.12408788994213,
         "id":"1"
     },
     {
@@ -56,6 +60,8 @@
         "subway":"Exit 7 of Haeundae Station on Urban Railroad Line 2 → 181, 100, Haeundae 9 bus transfer → Haedong Yonggungsa Get off",
         "bus":"Exit 1 of Osiria Station on the Donghae Line → Transfer to Osiria Station Bus Stop 139 Buses → Haedong Yonggungsa Get off",
         "remark":"a handicapped toilet",
+        "x":35.18840944432351,
+        "y":129.22312569219494,
         "id":"2"
     },
     {
@@ -75,6 +81,8 @@
         "subway":"Subway - 15 minutes walk when getting off at Onsenjang Station",
         "bus":"A city bus - 5 minutes walk when getting off at the entrance of Geumgangwon / 7 minutes walk when getting off at the entrance.",
         "remark":"",
+        "x":35.226076089227284,
+        "y":129.07709300317225,
         "id":"3"
     },
     {
@@ -94,6 +102,8 @@
         "subway":"Subway - Get off at Beomeosa Station on Line 1",
         "bus":"A city bus -  90: Get off at the bus stop in front of the Beomeosa Temple ticket office",
         "remark":"",
+        "x": 35.28347298330994,
+        "y":129.0685135669848,
         "id":"4"
     },
     {
@@ -113,6 +123,8 @@
         "subway":"Subway - From Exit 8 of Namsan Station on the subway to the entrance of Hoedong Suwon",
         "bus":"A city bus -  Geumjeong-gu 3-1 bus: Get off at the entrance of the Hoenghoe water source",
         "remark":"",
+        "x":35.2579626378242,
+        "y":129.11134658425317,
         "id":"5"
     },
     {
@@ -132,6 +144,8 @@
         "subway":"Toseong-dong Station Exit 6, Goejeong Station Exit 6, bus village bus Saha 1-1, Seo-gu 2, Seo-gu 2-2",
         "bus":"",
         "remark":"",
+        "x":35.09630120171202,
+        "y":129.00941792886448 ,
         "id":"6"
     }
     ,
@@ -152,6 +166,8 @@
         "subway":"6-minute walk from Exit 1 of Jungang Station on City Railroad Line 1 7-minute walk from Exit 7 of Nampo Station, Line 1",
         "bus":"Get off Bus 126, 15, 186, 81, 86 at Baeksan Memorial Hall and walk for 6 minutes. 134, 26, 30, 7, 71, 9, 103, 11, 113, 126, 15 Get off at Nampo-dong and walk for 10 minutes",
         "remark":"Parking Yongdusan Park public parking lot (paid), Wheelchair accessible, wheelchair rental, audio guide",
+        "x":35.10076482172878,
+        "y":129.03248915893903,
         "id":"7"
     }
     ,
@@ -172,6 +188,8 @@
         "subway":"Exit 6 of Nampo Station on Busan Metro Line 1 → Transfer to Bus 7, 71, or 508 → Get off at Baekryunsa Temple in Yeongseon-dong",
         "bus":"Bus 7,71,508 get off at Baekryunsa Temple in Yeongseon-dong",
         "remark":"Parking Public parking lot at the entrance of Jeolyeong Coastal Trail (paid), Parking lot for the disabled (Jeolyeong Coastal Trail public parking lot, paid) ",
+        "x":35.07741642479575,
+        "y": 129.04541801394453 ,
         "id":"8"
     }
     ,
@@ -192,6 +210,8 @@
         "subway":"Get off the subway at Hwamang Station on Busan Metro Line 2.",
         "bus":"City buses use 15 and 59.",
         "remark":"Geumjeongsan Mountain Makgeolli restaurant is famous.",
+        "x":35.228587409276436,
+        "y":129.04485731861277 ,
         "id":"9"
     }
     ,
@@ -212,6 +232,8 @@
         "subway":"Get off at Ilgwang Station on Busan's Donghae Line.",
         "bus":"The city bus is 180 and the number 3 for Seosaeng is used.",
         "remark":"The on-road public parking lot in front of Ilgwang Beach is operated free of charge only during the summer vacation season.",
+        "x":35.25981444576546,
+        "y":129.23375418390515,
         "id":"10"
     }
     ,
@@ -235,6 +257,8 @@
         "subway":"Get off at Daeyeon Station on Busan Metro Line 2",
         "bus":"City buses use 51, 68, 101, 134, 138, and 1006.",
         "remark":"If you want to view the old excavation of Confucianism, I recommend the Bokcheon Museum under the Busan Museum.",
+        "x":35.12939025049896,
+        "y":129.0941507916582,
         "id":"11"
     }
 ]

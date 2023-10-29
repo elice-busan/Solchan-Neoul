@@ -52,7 +52,7 @@ input
 {
     width: 500px;
     height: 500px;
-    background-image: url('../image/busan_bg.jpg');
+    background-image: url('../image/busan_bg.png');
     background-size: cover;
     border-radius: 0px;
     float: left;

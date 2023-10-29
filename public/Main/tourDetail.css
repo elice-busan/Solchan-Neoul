@@ -49,7 +49,8 @@ margin-top: 20px;
 font-size: 40px;
 font-weight: bold;
 margin-top: 10px;
-margin-bottom: 10px;
+margin-bottom: 30px;
+color: #0085FF;
 }
 #main{
 max-width: 1500px;
@@ -73,6 +74,7 @@ position: absolute;
 top: 50%;
 right: 10px;
 transform: translate(0, -50%); /* 수직 가운데 정렬을 위해 추가 */
+cursor: pointer;
 }
 
 .description{

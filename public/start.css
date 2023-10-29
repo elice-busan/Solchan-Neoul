@@ -38,14 +38,16 @@ html
 #banner
 {
     background-color: #ffffff;
-    height: 1000px;
+    height: 650px;
 }
 .banner-container
 {
     width: 1500px;
-    height: 1000px;
-    background-image: url('./image/busan_bg.jpg');
+    height: 650px;
+    background-image: url('./image/busan_bg.png');
+    background-position: 0%;
     margin: 0 auto;
+    overflow-x: hidden;
 }
 .banner-container img{
     width: 100%;
@@ -60,21 +62,36 @@ html
 }
 .banner-text-zone
 {
-    margin-top: 540px;
-    position: absolute;
+    margin-top: 20%;
+    /* position: absolute; */
     margin-left: 30px;
     width: 800px;
     height: 300px;
     background-color: rgb(255, 255, 255, 0);
     font-weight: bold;
+    overflow-x: hidden;
 }
+
 .banner-text-zone .p1
 {
     text-align: left;
     font-size: 35px;
     color: #ffffff;
     text-shadow: 2px 2px 4px rgb(54, 54, 54);
+    animation-duration: 2s;
+    animation-name: slide_p1;
     
+}
+@keyframes slide_p1{
+    from {
+        margin-left: -400px;
+        opacity: 0;
+    }
+
+    to {
+        margin-left: 0px;
+        opacity: 1;
+    }
 }
 .banner-text-zone .p2
 {
@@ -82,7 +99,19 @@ html
     font-size: 50px;
     color: #ffffff;
     text-shadow: 2px 2px 4px rgb(54, 54, 54);
-    
+    animation-duration: 2s;
+    animation-name: slide_p2;
+}
+@keyframes slide_p2{
+    from {
+        margin-left: -300px;
+        opacity: 0;
+    }
+
+    to {
+        margin-left: 0px;
+        opacity: 1;
+    }
 }
 .banner-text-zone .p3
 {
@@ -90,7 +119,19 @@ html
     font-size: 45px;
     color: #ffffff;
     text-shadow: 2px 2px 4px rgb(54, 54, 54);
-    
+    animation-duration: 2s;
+    animation-name: slide_p3;
+}
+@keyframes slide_p3{
+    from {
+        margin-left: -400px;
+        opacity: 0;
+    }
+
+    to {
+        margin-left: 0px;
+        opacity: 1;
+    }
 }
 #about
 {
@@ -115,7 +156,7 @@ html
 }
 .item1
 {
-    background-image: url('./image/item1.jpg');
+    background-image: url('./image/item1_1.png');
     background-size : cover;
     height: 620px;
     width: 350px;
@@ -126,6 +167,7 @@ html
 .item1:hover
 {
     transform: scale(1.02);
+    transition: 0.5s;
 }
 .item2
 {
@@ -141,6 +183,7 @@ html
 .item2:hover
 {
     transform: scale(1.02);
+    transition: 0.5s;
 }
 .item3
 {
@@ -155,6 +198,7 @@ html
 .item3:hover
 {
     transform: scale(1.02);
+    transition: 0.5s;
 }
 .item4
 {
@@ -169,6 +213,7 @@ html
 .item4:hover
 {
     transform: scale(1.02);
+    transition: 0.5s;
 }
 #contents
 {
@@ -193,21 +238,17 @@ html
 }
 .event-container
 {
-    width: 1200px;
-    height: 350px;
+    width: 1000px;
+    height: 300px;
     margin: 0 auto;
-    background-color: #ffffff;
-    border-radius: 5px;
-    border: 5px solid;
-    border-color: rgb(161, 161, 161);
-    border-radius: 10px;
+    margin-bottom: 150px;
 }
 .event-zone
 {
-    margin-left: 200px;
+    margin: 0 auto;
     margin-top: 20px;
     position: absolute;
-    width: 800px;
+    width: 1000px;
     height: 300px;
     background-color: #ffffff;
     overflow: hidden;
@@ -215,11 +256,11 @@ html
 }
 .alink
 {
-    width: 800px;
-    height: 300px;
-    background-color: #26bb82;
+    width: 100%;
+    height: 250px;
+    background-color: #000;
 }
-.slide
+div .slide
 {
     position: absolute;
     top: 0;
@@ -233,43 +274,32 @@ html
 }
 .alink-img1
 {
-    width: 800px;
-    height: 300px;
-    background-image: url(./image/event1.jpg);
+    width: 100%;
+    height: 250px;
     border-radius: 10px;
 }
 .alink-img2
 {
-    width: 800px;
-    height: 300px;
-    background-image: url(./image/event2.png);
+    width: 100%;
+    height: 250px;
     border-radius: 10px;
 }
 .alink-img3
 {
-    width: 800px;
-    height: 300px;
-    background-image: url(./image/event3.png);
+    width: 100%;
+    height: 250px;
     border-radius: 10px;
 }
-.alink-img3
-{
-    width: 800px;
-    height: 300px;
-    background-color: #00ff15;
-    border-radius: 10px;
-}
-  
   .slide:nth-child(1) {
-    background-color: #788f88;
+    background-color: #000;
     animation-delay: 0;
   }
   .slide:nth-child(2) {
-    background-color: #3891cc;
+    background-color: #000;
     animation-delay: -2.5s;
   }
   .slide:nth-child(3) {
-    background-color: #944ad1;
+    background-color: #000;
     animation-delay: -5s;
   }
   
@@ -300,6 +330,8 @@ html
     width: 320px;
     background-image: url(./image/image1.jpg);
     border-radius: 20px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+    transition: 0.5s;
 }
 .img2
 {
@@ -307,6 +339,8 @@ html
     width: 320px;
     background-image: url(./image/image2.jpg);
     border-radius: 20px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+    transition: 0.5s;
 }
 .img3
 {
@@ -314,6 +348,8 @@ html
     width: 320px;
     background-image: url(./image/image3.jpg);
     border-radius: 20px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+    transition: 0.5s;
 }
 .img4
 {
@@ -321,6 +357,8 @@ html
     width: 320px;
     background-image: url(./image/image4.jpg);
     border-radius: 20px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+    transition: 0.5s;
 }
 .img5
 {
@@ -328,6 +366,8 @@ html
     width: 320px;
     background-image: url(./image/image5.jpg);
     border-radius: 20px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+    transition: 0.5s;
 }
 .img6
 {
@@ -335,6 +375,8 @@ html
     width: 320px;
     background-image: url(./image/image6.jpg);
     border-radius: 20px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+    transition: 0.5s;
 }
 
 .img1:hover
