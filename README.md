@@ -35,8 +35,8 @@ NodeJs를 사용한 부산 관광지 소개 사이트
 
 ## 시작가이드
 ```
-$ git clone 주소
-$ cd 레포이름
+$ git clone https://github.com/elice-busan/Solchan-Neoul.git
+$ cd Solchan-Neoul
 ```
 
 
